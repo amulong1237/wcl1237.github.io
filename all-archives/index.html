@@ -28,6 +28,8 @@
         
     
     
+        <meta property="og:image" content="http://yoursite.com/assets/images/author.jpg"/>
+    
     
     
     
@@ -44,6 +46,10 @@
 
 
     
+        
+            
+        
+    
 
 <header id="header" data-behavior="1">
     <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
@@ -56,6 +62,8 @@
                 href="#about">
         
         
+            <img class="header-picture" src="/assets/images/author.jpg" alt="作者的图片"/>
+        
         </a>
     
 </header>
@@ -63,8 +71,23 @@
             <!-- Define author's picture -->
 
 
+
+        
+    
+
 <nav id="sidebar" data-behavior="1">
     <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/author.jpg" alt="作者的图片"/>
+                </a>
+                <h4 class="sidebar-profile-name">王昌隆</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>author.bio</p>
+</h5>
+                
+            </div>
         
         
             <ul class="sidebar-buttons">
@@ -196,7 +219,7 @@
                 
                 <ul class="archive-posts archive-month" data-date="201609">
                     <h5 class="archive-title">
-                        <a class="link-unstyled" href="/archives/2016/09">September</a>
+                        <a class="link-unstyled" href="/archives/2016/09">九月</a>
                     </h5>
                 
             
@@ -229,11 +252,17 @@
         
 
 
+    
+        
+    
+
 <div id="about">
     <div id="about-card">
         <div id="about-btn-close">
             <i class="fa fa-remove"></i>
         </div>
+        
+            <img id="about-card-picture" src="/assets/images/author.jpg" alt="作者的图片"/>
         
             <h4 id="about-card-name">王昌隆</h4>
         
@@ -248,6 +277,12 @@
 
             </div>
         
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                中国杭州
+            </div>
         
     </div>
 </div>
