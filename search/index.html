@@ -236,7 +236,7 @@
                         ">
                 
     <form class="search" action="/search/" method="get" accept-charset="utf-8">
-    <input type="text" id="st-default-search-input" maxlength="20" placeholder="搜索" />
+    <input type="text" id="st-default-search-input" maxlength="20" placeholder="站内搜索" />
     </form>
     <div  id="container" class="page">
       <div class="st-search-container" style="width:70%; margin:1.5em auto"></div>
@@ -258,6 +258,21 @@
       padding: 10px 0;
       font-size: 25px;
       line-height: 30px;
+      border: 1px solid #eee;
+      border-radius: 30px;
+      text-indent: 30px;
+    }
+    #container{
+      margin: 1.5em;
+      padding: 0px 3.5em;
+    }
+    .st-search-container{
+      width: 100%;
+      margin: 1.5em auto;
+      margin-top: 5px;
+      border-top: 1px solid #eee;
+      padding: 10px 15px;
+      box-sizing: border-box;
     }
     .st-result-text {
          background: #fafafa;
