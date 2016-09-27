@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/27/hexo-tranquilpeak博客初长成(一)/index.html">
 <meta property="og:site_name" content="苏车式">
 <meta property="og:description" content="博客第一弹">
-<meta property="og:updated_time" content="2016-09-27T17:40:48.376Z">
+<meta property="og:updated_time" content="2016-09-27T17:52:42.608Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+tranquilpeak博客初长成(一)">
 <meta name="twitter:description" content="博客第一弹">
@@ -279,34 +279,26 @@
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
             <p>欢迎来到<a href="https://wcl1237.github.io" target="_blank" rel="external">苏车式</a>! 经过两天的努力，我的第一个微博终于顺利上线。作为一个初出茅庐的新人,希望可以得到前辈的批评指正，也同样愿意帮助正在奋进的朋友一起提高。接下来便将这两天来的收获分享给大家。<br><a id="more"></a></p>
-<p>##一、框架的选择</p>
-<p>博客的框架有很多，比如github自带的jekyii，以及基于jekyii的octopress，基于php的wordpress，还有nodejs类的大部分应用性框架。考虑到后期扩展跟移植，我最后选择了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
+<h2 id="一、框架的选择"><a href="#一、框架的选择" class="headerlink" title="一、框架的选择"></a>一、框架的选择</h2><p>博客的框架有很多，比如github自带的jekyii，以及基于jekyii的octopress，基于php的wordpress，还有nodejs类的大部分应用性框架。考虑到后期扩展跟移植，我最后选择了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
 <p>选择<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>的原因：第一、基于Node.js可以快速生成静态资源。第二、可以部署到github上。暂时免除域名，服务器等烦恼。第三、上手容易。从开发到配置到发布，5个命令轻松搞定。第四、撰写流畅。支持GitHub Flavored Markdown和所有Octopress的插件。第五、资源库还算强大。第六、扩展轻松。随着半年来的工作学习，渐渐明白从使用到改造到创造的过程是每个程序员必须经历的。</p>
-<p>##二、准备工作</p>
-<p>###安装Node与npm</p>
-<p>###安装Git</p>
-<p>###申请GitHub</p>
-<p>##三、安装Hexo</p>
-<p>首先创建一个文件夹<folder>。 </folder></p>
+<h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h2><h3 id="安装Node与npm"><a href="#安装Node与npm" class="headerlink" title="安装Node与npm"></a>安装Node与npm</h3><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h3 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h3><h2 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h2><p>首先创建一个文件夹<folder>。 </folder></p>
 <p>使用管理员权限打开命令行。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> &lt;folder&gt;</div></pre></td></tr></table></figure>
 <p>全局安装Hexo.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<p>##四、建站</p>
-<p>安装 Hexo完成后，请执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。</p>
+<h2 id="四、建站"><a href="#四、建站" class="headerlink" title="四、建站"></a>四、建站</h2><p>安装 Hexo完成后，请执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo init blog</div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line">$ npm install</div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>浏览器输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
-<p>##五、主题</p>
-<p>在<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>或者其他地方选择你喜欢的模版，比如tranquilpeak。</p>
+<p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h2 id="五、主题"><a href="#五、主题" class="headerlink" title="五、主题"></a>五、主题</h2><p>在<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>或者其他地方选择你喜欢的模版，比如tranquilpeak。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak.git</div></pre></td></tr></table></figure>
 <p>或者直接Download ZIP</p>
 <p>然后将文件放到\blog\themes下，然后找到主目录下_config.yml文件，修改如下设置</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">theme: tranquilpeak</div><div class="line">post_assert_folder: <span class="literal">true</span></div></pre></td></tr></table></figure>
 <p>然后，运行</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo generate</div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>打开浏览器输入<a href="http://localhost:4000，你会发现it" target="_blank" rel="external">http://localhost:4000，你会发现it</a> works,but 不像我们想象中那样(如果真的和你想的一样，请略过一下)。查看<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">user documentation</a>,你会发现我们正在使用的是tranquilpeak (developers)，所以如果你只想使用该主题，请下载<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.9.1/hexo-theme-tranquilpeak-built-for-production-1.9.1.zip" target="_blank" rel="external">version1.9.1 for production</a>，具体设置请参考<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="external">文档</a></p>
-<p>##参考内容：<br><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="external">官方文档——User documentation</a></p>
-<p><a><i class="fa fa-copyright"></i> 著作权归作者所有</a></p>
+<p>打开浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ，你会发现it works,but 不像我们想象中那样(如果真的和你想的一样，请略过一下)。查看<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak" target="_blank" rel="external">user documentation</a>,你会发现我们正在使用的是tranquilpeak (developers)，所以如果你只想使用该主题，请下载<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/releases/download/v1.9.1/hexo-theme-tranquilpeak-built-for-production-1.9.1.zip" target="_blank" rel="external">version1.9.1 for production</a>，具体设置请参考<a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="external">文档</a></p>
+<h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><p><a href="https://github.com/LouisBarranqueiro/hexo-theme-tranquilpeak/blob/master/docs/user.md" target="_blank" rel="external">官方文档——User documentation</a></p>
+<p><i style="font-size: 0.7rem;"><i class="fa fa-copyright"></i> 著作权归作者所有</i></p>
 
             
         </div>
