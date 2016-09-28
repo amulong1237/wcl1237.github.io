@@ -62,17 +62,18 @@
     <link href="http://yoursite.com/2016/09/27/hexo-tranquilpeak%E5%8D%9A%E5%AE%A2%E5%88%9D%E9%95%BF%E6%88%90(%E4%B8%80)/"/>
     <id>http://yoursite.com/2016/09/27/hexo-tranquilpeak博客初长成(一)/</id>
     <published>2016-09-27T15:16:15.000Z</published>
-    <updated>2016-09-28T02:02:03.408Z</updated>
+    <updated>2016-09-28T06:33:15.093Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎来到<a href="https://wcl1237.github.io" target="_blank" rel="external">苏车式</a>! 经过两天的努力，我的第一个博客终于顺利上线。作为一个初出茅庐的新人,希望可以得到前辈的批评指正，也同样愿意帮助正在奋进的朋友一起提高。接下来便将这两天来的收获分享给大家。<br><a id="more"></a></p>
 <h2 id="一、框架的选择"><a href="#一、框架的选择" class="headerlink" title="一、框架的选择"></a>一、框架的选择</h2><p>博客的框架有很多，比如github自带的jekyii，以及基于jekyii的octopress，基于php的wordpress，还有nodejs类的大部分应用性框架。考虑到后期扩展跟移植，我最后选择了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
 <p>选择<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>的原因：第一、基于Node.js可以快速生成静态资源。第二、可以部署到github上。暂时免除域名，服务器等烦恼。第三、上手容易。从开发到配置到发布，5个命令轻松搞定。第四、撰写流畅。支持GitHub Flavored Markdown和所有Octopress的插件。第五、资源库还算强大。第六、扩展轻松。随着半年来的工作学习，渐渐明白从使用到改造到创造的过程是每个程序员必须经历的。</p>
-<h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h2><h3 id="安装Node与npm"><a href="#安装Node与npm" class="headerlink" title="安装Node与npm"></a>安装Node与npm</h3><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h3 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h3><h2 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h2><p>首先创建一个文件夹<folder>。 </folder></p>
+<h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h2><h3 id="安装Node与npm"><a href="#安装Node与npm" class="headerlink" title="安装Node与npm"></a>安装Node与npm</h3><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h3 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h3><h2 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h2><p>全局安装Hexo.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<h2 id="四、建站"><a href="#四、建站" class="headerlink" title="四、建站"></a>四、建站</h2><p>安装 Hexo完成后，</p>
+<p>首先创建一个文件夹 folder。 </p>
 <p>使用管理员权限打开命令行。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> &lt;folder&gt;</div></pre></td></tr></table></figure>
-<p>全局安装Hexo.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-cli -g</div></pre></td></tr></table></figure>
-<h2 id="四、建站"><a href="#四、建站" class="headerlink" title="四、建站"></a>四、建站</h2><p>安装 Hexo完成后，请执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。</p>
+<p>然后执行下列命令，Hexo将会在指定文件夹中新建所需要的文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo init blog</div><div class="line">$ <span class="built_in">cd</span> blog</div><div class="line">$ npm install</div><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>浏览器输入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
 <h2 id="五、主题"><a href="#五、主题" class="headerlink" title="五、主题"></a>五、主题</h2><p>在<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>或者其他地方选择你喜欢的模版，比如tranquilpeak。</p>
