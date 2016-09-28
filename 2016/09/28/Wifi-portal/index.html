@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/28/Wifi-portal/index.html">
 <meta property="og:site_name" content="苏车式">
 <meta property="og:description" content="第一个项目">
-<meta property="og:updated_time" content="2016-09-28T07:02:57.838Z">
+<meta property="og:updated_time" content="2016-09-28T15:15:28.577Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wifi portal">
 <meta name="twitter:description" content="第一个项目">
@@ -294,7 +294,7 @@
 <h2 id="接口调试"><a href="#接口调试" class="headerlink" title="接口调试"></a>接口调试</h2><p>拿到接口文档就开始写后台交互。自己封装好一个ajax，交互逻辑写好，开始调试接口。<br>然后问题出现了，后端解析不了我传过去的数据。后来查出我传过去的不是严格格式的json。然后花了一个小时时间拼接了这个字符串：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&#123;\"mobile\":\"'</span>+tel+<span class="string">'\",\"pwd\":\"'</span>+code+<span class="string">'\",\"funCode\":\"8003\"&#125;'</span></div></pre></td></tr></table></figure>
 <h2 id="ajax是异步的！"><a href="#ajax是异步的！" class="headerlink" title="ajax是异步的！"></a>ajax是异步的！</h2><p>开发是小，bug是大。ajax的成功回调函数是需要后端返回数据后才能执行的。也就是说想要使用response需要在回调函数中，写在ajax后面来调用的话，一般都会报undefind。</p>
-<h2 id="实例化swiper时，需要Dom加载完成。"><a href="#实例化swiper时，需要Dom加载完成。" class="headerlink" title="实例化swiper时，需要Dom加载完成。"></a>实例化swiper时，需要Dom加载完成。</h2><p>一般的说，我们都习惯在window onload后去ew swiper。但是如果在此之后去修改swiper 图片数量的话，就会造成指示器跟图片对不上号的现象。<br>这是因为new swiper的过程中swper.js对DOM进行了一系列操作，指示器是依据当时图片数量生成的。所以实例化swiper时，需要先做图片修改并等待Dom加载完成。</p>
+<h2 id="实例化swiper时，需要Dom加载完成。"><a href="#实例化swiper时，需要Dom加载完成。" class="headerlink" title="实例化swiper时，需要Dom加载完成。"></a>实例化swiper时，需要Dom加载完成。</h2><p>一般的说，我们都习惯在window onload后去new swiper。但是如果在此之后去修改swiper 图片数量的话，就会造成指示器跟图片对不上号的现象。<br>这是因为new swiper的过程中swper.js对DOM进行了一系列操作，指示器是依据当时图片数量生成的。所以实例化swiper时，需要先做图片修改并等待Dom加载完成。</p>
 <h2 id="浏览器与AP的交互"><a href="#浏览器与AP的交互" class="headerlink" title="浏览器与AP的交互"></a>浏览器与<a href="http://baike.baidu.com/link?url=IorPqk2qK5pfIXXP6Eq7IUvHxKju-6dQPwrRpVdX_4q4Gc-9XKa5_p5kOFz046Bzbt-XdhVSqTeDraUg2UL5oa" target="_blank" rel="external">AP</a>的交互</h2><p>当浏览器通过wifi首次连接到AP时，AP会获取到手机mac信息，进行信息校验。若为新用户AP会拦截网络请求并将手机mac信息协带AP部分信息重定向到server。用户需要在页面进行注册认证。成功后server会通知AC(AP后台云服务器)，AC下发指令到AP放行该mac。</p>
 <p>注：手机mac信息在链接wifi时就会表现出来，属于公开信息。</p>
 <h2 id="Wifi-portal"><a href="#Wifi-portal" class="headerlink" title="Wifi portal"></a>Wifi portal</h2><p>Wifi portal实际是指当手机器连接wifi后，手机自动打开的portal页面。该页面属于浏览器的一部分，一般内核为手机自带浏览器。但是该浏览器在暴露过程中，无法访问手机内任何信息，包括但不限于cookie、localStorage、sessionStorage。</p>
