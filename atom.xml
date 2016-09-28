@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-28T08:50:38.135Z</updated>
+  <updated>2016-09-28T08:53:22.366Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,15 +20,15 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%80/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之一/</id>
     <published>2016-09-28T07:29:14.000Z</published>
-    <updated>2016-09-28T08:50:38.135Z</updated>
+    <updated>2016-09-28T08:53:22.366Z</updated>
     
     <content type="html"><![CDATA[<h2 id="form标签定义和用法"><a href="#form标签定义和用法" class="headerlink" title="form标签定义和用法"></a>form标签定义和用法</h2><p>&lt;form&gt; 标签用于为用户输入创建 HTML 表单。<br>表单能够包含 input 元素，比如文本字段、复选框、单选框、提交按钮等等。<br>表单还可以包含 menus、textarea、fieldset、legend 和 label 元素。<br>表单用于向服务器传输数据。<br><a id="more"></a></p>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"url"</span> enctype=<span class="string">"multipart/form-data"</span> name=<span class="string">"form1"</span> target=<span class="string">"_blank"</span> method=<span class="string">"get"</span> &gt;</div><div class="line">  &lt;p&gt;First name: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"fname"</span> /&gt;&lt;/p&gt;</div><div class="line">  &lt;p&gt;Last name: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"lname"</span> /&gt;&lt;/p&gt;</div><div class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> value=<span class="string">"Submit"</span> /&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
-<h2 id="form元素属性"><a href="#form元素属性" class="headerlink" title="form元素属性"></a>form元素属性</h2><p>accept-charset    |charset_list|规定服务器可处理的表单数据字符集。<br>action            |URL|    规定当提交表单时向何处发送表单数据。<br>autocomplete    |on    |    规定是否启用表单的自动完成功能。<br>                |off|<br>method            |get|    规定用于发送 form-data 的 HTTP 方法。<br>                |post|<br>name            |form_name|    规定表单的名称。<br>target            |_blank|    规定在何处打开 action URL。<br>                |_self|<br>                |_parent|<br>                |_top|<br>                |framename|<br>enctype          |application/x-www-form-urlencoded|<br>                |multipart/form-data|<br>                |text/plain|</p>
+<h2 id="form元素属性"><a href="#form元素属性" class="headerlink" title="form元素属性"></a>form元素属性</h2><p>—————-|———————————–|———<br>accept-charset    |charset_list|规定服务器可处理的表单数据字符集。<br>action            |URL|    规定当提交表单时向何处发送表单数据。<br>autocomplete    |on    |    规定是否启用表单的自动完成功能。<br>                |off|<br>method            |get|    规定用于发送 form-data 的 HTTP 方法。<br>                |post|<br>name            |form_name|    规定表单的名称。<br>target            |_blank|    规定在何处打开 action URL。<br>                |_self|<br>                |_parent|<br>                |_top|<br>                |framename|<br>enctype          |application/x-www-form-urlencoded|<br>                |multipart/form-data|<br>                |text/plain|</p>
 <h2 id="Form-对象"><a href="#Form-对象" class="headerlink" title="Form 对象"></a>Form 对象</h2><p>Form 对象代表一个 HTML 表单。<br>在 HTML 文档中 <form> 每出现一次，Form 对象就会被创建。</form></p>
-<h2 id="Form-对象属性"><a href="#Form-对象属性" class="headerlink" title="Form 对象属性"></a>Form 对象属性</h2><p>acceptCharset    |服务器可接受的字符集。<br>action    |设置或返回表单的 action 属性。<br>enctype    |设置或返回表单用来编码内容的 MIME 类型。<br>id    |设置或返回表单的 id。<br>length    |返回表单中的元素数目。<br>method    |设置或返回将数据发送到服务器的 HTTP 方法。<br>name    |设置或返回表单的名称。<br>target    |设置或返回表单提交结果的 Frame 或 Window 名。</p>
+<h2 id="Form-对象属性"><a href="#Form-对象属性" class="headerlink" title="Form 对象属性"></a>Form 对象属性</h2><p>—————-|——————————————–<br>acceptCharset    |服务器可接受的字符集。<br>action            |设置或返回表单的 action 属性。<br>enctype            |设置或返回表单用来编码内容的 MIME 类型。<br>id                |设置或返回表单的 id。<br>length            |返回表单中的元素数目。<br>method            |设置或返回将数据发送到服务器的 HTTP 方法。<br>name            |设置或返回表单的名称。<br>target            |设置或返回表单提交结果的 Frame 或 Window 名。</p>
 <h2 id="Form-对象方法-句柄"><a href="#Form-对象方法-句柄" class="headerlink" title="Form 对象方法/句柄"></a>Form 对象方法/句柄</h2><p>submit()    提交表单。<br>onsubmit    在提交表单之前调用。</p>
-<h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><p><a href="http://www.w3school.com.cn/tags/tag_form.asp" target="_blank" rel="external">W3C <form>标签</form></a></p>
+<h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><p><a href="http://www.w3school.com.cn/tags/tag_form.asp" target="_blank" rel="external">W3Cform标签</a></p>
 ]]></content>
     
     <summary type="html">
