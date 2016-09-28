@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/28/Wifi-portal/index.html">
 <meta property="og:site_name" content="苏车式">
 <meta property="og:description" content="第一个项目">
-<meta property="og:updated_time" content="2016-09-28T06:57:33.211Z">
+<meta property="og:updated_time" content="2016-09-28T07:02:57.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Wifi portal">
 <meta name="twitter:description" content="第一个项目">
@@ -290,8 +290,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>工作以来第一个项目，虽然说不上手足无措，但是也同样有点力不从心。代码写了改，改了写，总感觉不好。纠结了4个小时，终于把相关的9个网页写完。然后…第二天，产品改了需求，页面被精简到4个。好吧，拿回原稿修改了一下啊，UI部分总算出活了。接下来与大家分享一下，开发中遇到的问题。</p>
-<a id="more"></a>
+            <p>工作以来第一个项目，虽然说不上手足无措，但是也同样有点力不从心。代码写了改，改了写，总感觉不好。纠结了4个小时，终于把相关的9个网页写完。然后…第二天，产品改了需求，页面被精简到4个。好吧，拿回原稿修改了一下啊，UI部分总算出活了。接下来与大家分享一下，开发中遇到的问题。<br><a id="more"></a></p>
 <h2 id="接口调试"><a href="#接口调试" class="headerlink" title="接口调试"></a>接口调试</h2><p>拿到接口文档就开始写后台交互。自己封装好一个ajax，交互逻辑写好，开始调试接口。<br>然后问题出现了，后端解析不了我传过去的数据。后来查出我传过去的不是严格格式的json。然后花了一个小时时间拼接了这个字符串：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&#123;\"mobile\":\"'</span>+tel+<span class="string">'\",\"pwd\":\"'</span>+code+<span class="string">'\",\"funCode\":\"8003\"&#125;'</span></div></pre></td></tr></table></figure>
 <h2 id="ajax是异步的！"><a href="#ajax是异步的！" class="headerlink" title="ajax是异步的！"></a>ajax是异步的！</h2><p>开发是小，bug是大。ajax的成功回调函数是需要后端返回数据后才能执行的。也就是说想要使用response需要在回调函数中，写在ajax后面来调用的话，一般都会报undefind。</p>
