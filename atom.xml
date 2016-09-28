@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-28T11:04:39.265Z</updated>
+  <updated>2016-09-28T11:06:48.253Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%BA%8C/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之二/</id>
     <published>2016-09-28T10:19:09.000Z</published>
-    <updated>2016-09-28T11:04:39.265Z</updated>
+    <updated>2016-09-28T11:06:48.253Z</updated>
     
     <content type="html"><![CDATA[<p>AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。<br>AJAX = 异步 JavaScript和XML（标准通用标记语言的子集）。<br>AJAX 是一种用于创建快速动态网页的技术。<br>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。<br><a id="more"></a></p>
 <h2 id="XMLHttpRequest-是-AJAX-的基础。"><a href="#XMLHttpRequest-是-AJAX-的基础。" class="headerlink" title="XMLHttpRequest 是 AJAX 的基础。"></a>XMLHttpRequest 是 AJAX 的基础。</h2><p>注：IE5 和 IE6 使用 ActiveXObject。</p>
@@ -33,8 +33,7 @@
 <p>variable=new ActiveXObject(“Microsoft.XMLHTTP”);</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//创建</div><div class="line">var xmlhttp;</div><div class="line"><span class="keyword">if</span> (window.XMLHttpRequest)</div><div class="line">  &#123;// code <span class="keyword">for</span> IE7+, Firefox, Chrome, Opera, Safari</div><div class="line">  xmlhttp=new XMLHttpRequest();</div><div class="line">  &#125;</div><div class="line"><span class="keyword">else</span></div><div class="line">  &#123;// code <span class="keyword">for</span> IE6, IE5</div><div class="line">  xmlhttp=new ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<h2 id="XMLHttpRequest对象用于和服务器交换数据。"><a href="#XMLHttpRequest对象用于和服务器交换数据。" class="headerlink" title="XMLHttpRequest对象用于和服务器交换数据。"></a>XMLHttpRequest对象用于和服务器交换数据。</h2><h3 id="XMLHttpRequest对象的方法"><a href="#XMLHttpRequest对象的方法" class="headerlink" title="XMLHttpRequest对象的方法"></a>XMLHttpRequest对象的方法</h3><blockquote>
-<p>open(method,url,async)</p>
+<h2 id="XMLHttpRequest对象用于和服务器交换数据。"><a href="#XMLHttpRequest对象用于和服务器交换数据。" class="headerlink" title="XMLHttpRequest对象用于和服务器交换数据。"></a>XMLHttpRequest对象用于和服务器交换数据。</h2><h3 id="XMLHttpRequest对象的方法"><a href="#XMLHttpRequest对象的方法" class="headerlink" title="XMLHttpRequest对象的方法"></a>XMLHttpRequest对象的方法</h3><p>open(method,url,async)</p>
 <blockquote>
 <p>method：请求的类型；GET 或 POST<br>url：文件在服务器上的位置<br>async：true（异步）或 false（同步）</p>
 </blockquote>
@@ -42,7 +41,6 @@
 <p>setRequestHeader(header,value)</p>
 <blockquote>
 <p>header: 规定头的名称<br>value: 规定头的值</p>
-</blockquote>
 </blockquote>
 <h3 id="XMLHttpRequest对象的属性"><a href="#XMLHttpRequest对象的属性" class="headerlink" title="XMLHttpRequest对象的属性"></a>XMLHttpRequest对象的属性</h3><p>onreadystatechange  当 readyState 属性改变时，就会触发该事件</p>
 <p>readyState     存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。</p>
