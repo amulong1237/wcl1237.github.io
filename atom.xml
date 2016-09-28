@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-28T16:18:49.585Z</updated>
+  <updated>2016-09-28T16:21:04.781Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%89/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之三/</id>
     <published>2016-09-28T15:26:00.000Z</published>
-    <updated>2016-09-28T16:18:49.585Z</updated>
+    <updated>2016-09-28T16:21:04.781Z</updated>
     
     <content type="html"><![CDATA[<p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器沟通，而 HTML 的&lt;script&gt;元素是一个例外。利用 &lt;script&gt;元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。<br><a id="more"></a></p>
 <h2 id="服务器端对JSONP支持"><a href="#服务器端对JSONP支持" class="headerlink" title="服务器端对JSONP支持"></a>服务器端对JSONP支持</h2><p>请求： <a href="http://example.com/servlet?jsonp=callbackFunction。" target="_blank" rel="external">http://example.com/servlet?jsonp=callbackFunction。</a><br>期望数据：[“param1”,”param2”]<br>前段通过&lt;script&gt;加载文档并调用。实现callbackFunction函数调用</p>
 <p>Java:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">return</span> request.getParameter(<span class="string">"callbackFunction"</span>)+<span class="string">"("</span>+JsonString+<span class="string">")"</span>;</div></pre></td></tr></table></figure></p>
 <p>返回内容像：callbackFunction([“param1”,”param2”])</p>
 <h2 id="客户端实现-callbackFunction-函数"><a href="#客户端实现-callbackFunction-函数" class="headerlink" title="客户端实现 callbackFunction 函数"></a>客户端实现 callbackFunction 函数</h2><p>在客户端调用提供JSONP支持的URL Service，获取JSONP格式数据。</p>
-<p>####创建&lt;script&gt;标签<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var head= document.getElementsByTagName(<span class="string">'head'</span>)[0]; </div><div class="line">var script= document.createElement(<span class="string">'script'</span>); </div><div class="line">script.type= <span class="string">'text/javascript'</span>; </div><div class="line">script.src= <span class="string">'http://example.com/servlet?jsonp=callbackFunction'</span>; </div><div class="line">head.appendChild(script);</div></pre></td></tr></table></figure></p>
+<h4 id="创建-lt-script-gt-标签"><a href="#创建-lt-script-gt-标签" class="headerlink" title="创建&lt;script&gt;标签"></a>创建&lt;script&gt;标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var head= document.getElementsByTagName(<span class="string">'head'</span>)[0]; </div><div class="line">var script= document.createElement(<span class="string">'script'</span>); </div><div class="line">script.type= <span class="string">'text/javascript'</span>; </div><div class="line">script.src= <span class="string">'http://example.com/servlet?jsonp=callbackFunction'</span>; </div><div class="line">head.appendChild(script);</div></pre></td></tr></table></figure>
 <p>结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	...</div><div class="line">	&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://example.com/servlet?jsonp=callbackFunction"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
-<p>####客户端实现 callbackFunction 函数(全局)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> callbackFunction(result) &#123;  </div><div class="line">    <span class="keyword">for</span>(var i <span class="keyword">in</span> result) &#123;  </div><div class="line">        alert(i+<span class="string">":"</span>+result[i]); </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="客户端实现-callbackFunction-函数-全局"><a href="#客户端实现-callbackFunction-函数-全局" class="headerlink" title="客户端实现 callbackFunction 函数(全局)"></a>客户端实现 callbackFunction 函数(全局)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> callbackFunction(result) &#123;  </div><div class="line">    <span class="keyword">for</span>(var i <span class="keyword">in</span> result) &#123;  </div><div class="line">        alert(i+<span class="string">":"</span>+result[i]); </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><p><a href="http://baike.baidu.com/link?url=7LFR-mfdqdfKP27vWNn3Mykr_tTaicF9gIFSbTiSDN8KAdnH5Y0yMsRb9aCAa1W3SEMoW7JuzrqNMlYLcuPDDq" target="_blank" rel="external">百度百科_jsonp</a></p>
 ]]></content>
     
@@ -42,9 +42,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
-    
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
+    
+      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
@@ -141,9 +141,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
-    
       <category term="form" scheme="http://yoursite.com/tags/form/"/>
+    
+      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
