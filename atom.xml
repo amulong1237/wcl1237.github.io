@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-28T17:06:50.470Z</updated>
+  <updated>2016-09-29T02:26:51.307Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,20 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈onerror</title>
+    <link href="http://yoursite.com/2016/09/29/%E6%B5%85%E8%B0%88onerror/"/>
+    <id>http://yoursite.com/2016/09/29/浅谈onerror/</id>
+    <published>2016-09-29T02:26:51.000Z</published>
+    <updated>2016-09-29T02:26:51.307Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>form-ajax-jsonp三部曲之三</title>
@@ -50,9 +64,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
-    
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
+    
+      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
@@ -149,9 +163,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
-    
       <category term="form" scheme="http://yoursite.com/tags/form/"/>
+    
+      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
