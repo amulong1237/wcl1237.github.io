@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-28T17:06:50.470Z</updated>
+  <updated>2016-09-29T03:50:51.862Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅谈onerror</title>
+    <link href="http://yoursite.com/2016/09/29/%E6%B5%85%E8%B0%88onerror/"/>
+    <id>http://yoursite.com/2016/09/29/浅谈onerror/</id>
+    <published>2016-09-29T02:26:51.000Z</published>
+    <updated>2016-09-29T03:50:51.862Z</updated>
+    
+    <content type="html"><![CDATA[<p>onerror 事件会在文档或图像加载过程中发生错误时被触发，或者页面中出现脚本错误，也会产生 onerror 事件。<br>如果需要利用 onerror 事件，就必须创建一个处理错误的函数。你可以把这个函数叫作 onerror 事件处理器 (onerror event handler)。这个事件处理器使用三个参数来调用：msg（错误消息）、url（发生错误的页面的 url）、line（发生错误的代码行）。同样，你也可以不使用他们。<br><a id="more"></a></p>
+<h2 id="监听脚本错误"><a href="#监听脚本错误" class="headerlink" title="监听脚本错误"></a>监听脚本错误</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		onerror=handleErr</div><div class="line">		var txt=<span class="string">""</span></div><div class="line">		<span class="keyword">function</span> handleErr(msg,url,l)</div><div class="line">		&#123;</div><div class="line">			txt=<span class="string">"There was an error on this page.\n\n"</span></div><div class="line">			txt+=<span class="string">"Error: "</span> + msg + <span class="string">"\n"</span></div><div class="line">			txt+=<span class="string">"URL: "</span> + url + <span class="string">"\n"</span></div><div class="line">			txt+=<span class="string">"Line: "</span> + l + <span class="string">"\n\n"</span></div><div class="line">			txt+=<span class="string">"Click OK to continue.\n\n"</span></div><div class="line">			alert(txt)</div><div class="line">			<span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">function</span> <span class="function"><span class="title">message</span></span>()</div><div class="line">		&#123;</div><div class="line">			alertdddlert(<span class="string">"Welcome guest!"</span>)</div><div class="line">		&#125;</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"View message"</span> onclick=<span class="string">"message()"</span> /&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<h2 id="监听资源加载"><a href="#监听资源加载" class="headerlink" title="监听资源加载"></a>监听资源加载</h2><p>如果装载图像时发生了错误，则显示一个对话框：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"image.gif"</span> onerror=<span class="string">"alert('The image could not be loaded.')"</span> /&gt;</div></pre></td></tr></table></figure></p>
+<p>支持该事件的 HTML 标签：</p>
+<blockquote>
+<p>&lt;img&gt;,&lt;script&gt; , &lt;link&gt; 等</p>
+</blockquote>
+<h2 id="使用onerror加载图片"><a href="#使用onerror加载图片" class="headerlink" title="使用onerror加载图片"></a>使用onerror加载图片</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;img src=<span class="string">"1.jpg"</span> id=<span class="string">'image'</span> onerror=<span class="string">"setimg()"</span> alt=<span class="string">"pic"</span> style=<span class="string">'background-image: url(2.jpg)'</span> /&gt;</div><div class="line">	&lt;script&gt;</div><div class="line">	<span class="keyword">function</span> <span class="function"><span class="title">setimg</span></span>()&#123;</div><div class="line">		var d_image = document.getElementById(<span class="string">'image'</span>);</div><div class="line">		d_image .setAttribute(<span class="string">'src'</span>,<span class="string">'3.jpg'</span>);</div><div class="line">		d_image .onerror = <span class="string">''</span>;</div><div class="line">	&#125;</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>利用3张图片，保证在加载第三方资源时不会因为无资源出现UI问题;同样也可以利用onerror监听js、css文件加载，实现二次请求。以及监听jsonp失败。</p>
+<h2 id="参考内容："><a href="#参考内容：" class="headerlink" title="参考内容："></a>参考内容：</h2><p><a href="http://www.w3school.com.cn/jsref/event_onerror.asp" target="_blank" rel="external">W3C_onerror事件</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      onerror用于错误处理，同时也可监听资源加载
+    
+    </summary>
+    
+      <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
+    
+    
+      <category term="onerror" scheme="http://yoursite.com/tags/onerror/"/>
+    
+  </entry>
   
   <entry>
     <title>form-ajax-jsonp三部曲之三</title>
