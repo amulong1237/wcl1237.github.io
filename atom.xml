@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-29T02:26:51.307Z</updated>
+  <updated>2016-09-28T17:06:50.470Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,20 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>浅谈onerror</title>
-    <link href="http://yoursite.com/2016/09/29/%E6%B5%85%E8%B0%88onerror/"/>
-    <id>http://yoursite.com/2016/09/29/浅谈onerror/</id>
-    <published>2016-09-29T02:26:51.000Z</published>
-    <updated>2016-09-29T02:26:51.307Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>form-ajax-jsonp三部曲之三</title>
