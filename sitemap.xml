@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/09/29/javascript%E5%AE%9E%E7%8E%B0ping/</loc>
+    
+    <lastmod>2016-09-29T07:41:23.212Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/29/%E6%B5%85%E8%B0%88onerror/</loc>
     
     <lastmod>2016-09-29T03:50:51.862Z</lastmod>
