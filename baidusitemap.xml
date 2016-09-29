@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2016/09/29/javascript%E5%AE%9E%E7%8E%B0ping/</loc>
-    <lastmod>2016-09-29T07:49:10.528Z</lastmod>
+    <lastmod>2016-09-29T08:11:09.287Z</lastmod>
     <data>
         <display>
         <title>javascript实现ping</title>
@@ -57,9 +57,9 @@
         <title>form-ajax-jsonp三部曲之三</title>
         <pubTime>2016-09-28T15:26:00.000Z</pubTime>
         
-        <tag>jsonp</tag>
-         
         <tag>数据交互</tag>
+         
+        <tag>jsonp</tag>
          
         <tag>javascript</tag>
          
@@ -107,9 +107,9 @@
         <title>form-ajax-jsonp三部曲之一</title>
         <pubTime>2016-09-28T07:29:14.000Z</pubTime>
         
-        <tag>数据交互</tag>
-         
         <tag>form</tag>
+         
+        <tag>数据交互</tag>
          
         <tag>html</tag>
          
