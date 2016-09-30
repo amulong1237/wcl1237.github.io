@@ -274,6 +274,152 @@
                         hasCoverMetaIn
                         ">
                 
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Wifi portal
+        </h1>
+    
+    <div class="post-meta">
+    <time itemprop="datePublished" datetime="2016-09-28T11:05:04+08:00">
+	
+		    9月 28, 2016
+    	
+    </time>
+    
+        <span>发布在 </span>
+        
+    <a class="category-link" href="/categories/工作/">工作</a>
+
+
+    
+</div>
+
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <p>工作以来第一个项目，虽然说不上手足无措，但是也同样有点力不从心。代码写了改，改了写，总感觉不好。纠结了4个小时，终于把相关的9个网页写完。然后…第二天，产品改了需求，页面被精简到4个。好吧，拿回原稿修改了一下啊，UI部分总算出活了。接下来与大家分享一下，开发中遇到的问题。<br><a id="more"></a></p>
+<h2 id="接口调试"><a href="#接口调试" class="headerlink" title="接口调试"></a>接口调试</h2><p>拿到接口文档就开始写后台交互。自己封装好一个ajax，交互逻辑写好，开始调试接口。<br>然后问题出现了，后端解析不了我传过去的数据。后来查出我传过去的不是严格格式的json。然后花了一个小时时间拼接了这个字符串：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&#123;\"mobile\":\"'</span>+tel+<span class="string">'\",\"pwd\":\"'</span>+code+<span class="string">'\",\"funCode\":\"8003\"&#125;'</span></div></pre></td></tr></table></figure>
+<h2 id="ajax是异步的！"><a href="#ajax是异步的！" class="headerlink" title="ajax是异步的！"></a>ajax是异步的！</h2><p>开发是小，bug是大。ajax的成功回调函数是需要后端返回数据后才能执行的。也就是说想要使用response需要在回调函数中，写在ajax后面来调用的话，一般都会报undefind。</p>
+<h2 id="实例化swiper时，需要Dom加载完成。"><a href="#实例化swiper时，需要Dom加载完成。" class="headerlink" title="实例化swiper时，需要Dom加载完成。"></a>实例化swiper时，需要Dom加载完成。</h2><p>一般的说，我们都习惯在window onload后去new swiper。但是如果在此之后去修改swiper 图片数量的话，就会造成指示器跟图片对不上号的现象。<br>这是因为new swiper的过程中swper.js对DOM进行了一系列操作，指示器是依据当时图片数量生成的。所以实例化swiper时，需要先做图片修改并等待Dom加载完成。</p>
+<h2 id="浏览器与AP的交互"><a href="#浏览器与AP的交互" class="headerlink" title="浏览器与AP的交互"></a>浏览器与<a href="http://baike.baidu.com/link?url=IorPqk2qK5pfIXXP6Eq7IUvHxKju-6dQPwrRpVdX_4q4Gc-9XKa5_p5kOFz046Bzbt-XdhVSqTeDraUg2UL5oa" target="_blank" rel="external">AP</a>的交互</h2><p>当浏览器通过wifi首次连接到AP时，AP会获取到手机mac信息，进行信息校验。若为新用户AP会拦截网络请求并将手机mac信息协带AP部分信息重定向到server。用户需要在页面进行注册认证。成功后server会通知AC(AP后台云服务器)，AC下发指令到AP放行该mac。</p>
+<p>注：手机mac信息在链接wifi时就会表现出来，属于公开信息。</p>
+<h2 id="Wifi-portal"><a href="#Wifi-portal" class="headerlink" title="Wifi portal"></a>Wifi portal</h2><p>Wifi portal实际是指当手机器连接wifi后，手机自动打开的portal页面。该页面属于浏览器的一部分，一般内核为手机自带浏览器。但是该浏览器在暴露过程中，无法访问手机内任何信息，包括但不限于cookie、localStorage、sessionStorage。</p>
+<h2 id="适配性"><a href="#适配性" class="headerlink" title="适配性"></a>适配性</h2><p>移动端或多或少会出现点适配性问题，相较于PC端ie6之类有过之而无不及。<br>①wifi portal在ios上会出现偶尔无法自动弹出的情况，原因是由于ios在打开portal页面之前会访问本身苹果的一个服务器，得到允许后才会打开。这个过程容易导致无法接受AP重定向信息。<br>②低端安卓手机，页面不会随手机键盘上移。解决办法在打开页面时增加页面长度。<br>③在UC浏览器上有个过滤广告设置的选项，开启该功能时，如果页面中出现ad等词汇会导致资源无法加载。</p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p>后来为了兼容PC端，我使用了framework7对程序进行了重写。有关framework7和SPA会在以后的文章中跟大家提及。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="正则："><a href="#正则：" class="headerlink" title="正则："></a>正则：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var REG_mobile = /^0?[1][34578][0-9]&#123;9&#125;$/;</div><div class="line">var REG_password = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]&#123;6,16&#125;$/;/*6-16位数字字母组合*/</div><div class="line">var REG_code = /^[0-9]&#123;6&#125;$/;</div></pre></td></tr></table></figure>
+<h3 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS:"></a>TIPS:</h3><h4 id="js-基于framework7"><a href="#js-基于framework7" class="headerlink" title="js(基于framework7)"></a>js(基于framework7)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">window.showTips = <span class="keyword">function</span>(content,t) &#123;</div><div class="line">   var p = $$(<span class="string">'&lt;p class="showTips zoomInDown"&gt;&lt;span&gt;'</span>+content+<span class="string">'&lt;/span&gt;&lt;/p&gt;'</span>);</div><div class="line">   <span class="keyword">if</span>($$(<span class="string">'.showTips'</span>).length&gt;0)<span class="built_in">return</span>;</div><div class="line">   $$(<span class="string">'body'</span>).append(p);</div><div class="line">   <span class="built_in">set</span>Timeout(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">	  p.addClass(<span class="string">'hide'</span>).transitionEnd(<span class="function"><span class="title">function</span></span>()&#123;p.remove()&#125;);//优化动画，平滑过渡</div><div class="line">   &#125;,t||2000)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h4 id="css样式"><a href="#css样式" class="headerlink" title="css样式"></a>css样式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">.zoomInDown&#123;</div><div class="line">-webkit-animation: zoomInDown .3s ease-in-out;</div><div class="line">&#125;</div><div class="line">@-webkit-keyframes zoomInDown&#123;0%&#123;opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)&#125;</div><div class="line">60%&#123;opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)&#125;</div><div class="line">&#125;</div><div class="line">@keyframes zoomInDown&#123;0%&#123;opacity:0;-webkit-transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);transform:scale3d(.1,.1,.1) translate3d(0,-1000px,0);-webkit-animation-timing-function:cubic-bezier(.55,.055,.675,.19);animation-timing-function:cubic-bezier(.55,.055,.675,.19)&#125;</div><div class="line">60%&#123;opacity:1;-webkit-transform:scale3d(.475,.475,.475) translate3d(0,60px,0);transform:scale3d(.475,.475,.475) translate3d(0,60px,0);-webkit-animation-timing-function:cubic-bezier(.175,.885,.32,1);animation-timing-function:cubic-bezier(.175,.885,.32,1)&#125;</div><div class="line">&#125; </div><div class="line">.showTips&#123;</div><div class="line">	position:fixed;</div><div class="line">	width:100%;</div><div class="line">	bottom:80px;</div><div class="line">	left:0;</div><div class="line">	text-align:center;</div><div class="line">	z-index:11000;</div><div class="line">	transition-duration:.3s</div><div class="line">&#125;</div><div class="line">.showTips span&#123;</div><div class="line">	background: rgba(0,0,0,.8);</div><div class="line">	border-radius: 4px;</div><div class="line">	color: <span class="comment">#fff;</span></div><div class="line">	padding: 17px 20px;</div><div class="line">	font-size: 1.2rem;</div><div class="line">	display: inline-block;</div><div class="line">	margin: 0 10px;</div><div class="line">&#125;</div><div class="line">.hide&#123;</div><div class="line">	opacity:0!important;</div><div class="line">	-webkit-transition-duration: 300ms;</div><div class="line">	transition-duration: 300ms;</div><div class="line">	-webkit-transform: translate3d(0, 0, 0) scale(0.8);</div><div class="line">	transform: translate3d(0, 0, 0) scale(0.8);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="countDown"><a href="#countDown" class="headerlink" title="countDown"></a>countDown</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">window.countDown=<span class="keyword">function</span>(obj,obj2)&#123;</div><div class="line">	var <span class="built_in">wait</span> = 60;</div><div class="line">	var timer;</div><div class="line">	clearInterval(timer)</div><div class="line">	obj.css(<span class="string">'opacity'</span>,<span class="string">'0.7'</span>)</div><div class="line">	timer=<span class="built_in">set</span>Interval(<span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		<span class="keyword">if</span>(<span class="built_in">wait</span>==<span class="string">'0'</span>)&#123;</div><div class="line">			clearInterval(timer)</div><div class="line">			obj.text(<span class="string">'重新发送'</span>);</div><div class="line">			obj.css(<span class="string">'opacity'</span>,<span class="string">'1'</span>)</div><div class="line">			obj2.removeAttr(<span class="string">'readonly'</span>)</div><div class="line">			obj.css(<span class="string">'color'</span>,<span class="string">'#356be6'</span>)</div><div class="line">			<span class="built_in">wait</span>=<span class="string">''</span></div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			obj.css(<span class="string">'color'</span>,<span class="string">'#adadad'</span>)</div><div class="line">			obj2.attr(<span class="string">'readonly'</span>,<span class="string">'readonly'</span>)</div><div class="line">			obj.text(<span class="built_in">wait</span>+<span class="string">'s'</span>);</div><div class="line">			<span class="built_in">wait</span>--;</div><div class="line">		&#125;</div><div class="line">	&#125;,1000)</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>无论怎样的开始都好过原地踌躇！成长在于跌倒爬起，犯错才是成长的催化剂！</p>
+
+            
+        </div>
+    </div>
+    
+    <div style='text-align: left;color: #999999;max-width: 750px;margin: 0 auto; margin-top: 5px;padding-right: 20px;padding-left: 20px; font-size: 12px;'>本文永久链接：<a href="http://yoursite.com/2016/09/28/Wifi-portal/">http://yoursite.com/2016/09/28/Wifi-portal/</a></div>
+    <div style='text-align: right;color: #999999;max-width: 750px;margin: 0 auto; margin-top: 20px;padding-right: 20px;padding-left: 20px; font-size: 12px;'><i class="fa fa-copyright" style='margin-right: 5px;'></i> 著作权归作者，所有转载请联系作者获得授权</div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">标签</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/framework7/">framework7</a> <a class="tag tag--primary tag--small t-link" href="/tags/工作/">工作</a> <a class="tag tag--primary tag--small t-link" href="/tags/移动端/">移动端</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/28/form-ajax-jsonp三部曲之一/"  data-tooltip="form-ajax-jsonp三部曲之一">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/27/hexo-tranquilpeak博客初长成(一)/" data-tooltip="hexo+tranquilpeak博客初长成(一)">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions"  href="#btn-open-shareoptions">
+                <i class="fa fa-share-alt"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/28/Wifi-portal/&amp;title=Wifi portal">
+                <i class="fa fa-weibo"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至微信" href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/28/Wifi-portal/&amp;title=Wifi portal">
+                <i class="fa fa-weixin"></i>
+            </a>
+        </li>
+        <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/28/Wifi-portal/&amp;title=Wifi portal">
+                <i class="fa fa-qq"></i>
+            </a>
+        </li>
+        
+            <li class="post-action">
+                <a class="post-action-btn btn btn--default" data-tooltip="留言板" href="/board/">
+                    <i class="fa fa-comment-o"></i>
+                </a>
+            </li>
+        
+      <!--  <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#">
+            
+                <i class="fa fa-list"></i>
+            </a>
+        </li>-->
+    </ul>
+</div>
+
+
+        
+            
+                
+<!-- 多说评论框 start -->
+<div id="ds-thread" class="ds-thread" data-thread-key="2016/09/28/Wifi-portal/"
+     data-title="Wifi portal" data-url="http://yoursite.com/2016/09/28/Wifi-portal/">
+</div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"wcl1237githubio"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+            
+        
+    </div>
+</article>
+
+
 
                 <footer id="footer" class="main-content-wrap">
     <span class="copyrights">
