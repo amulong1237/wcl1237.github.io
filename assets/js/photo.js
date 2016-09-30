@@ -43,3 +43,8 @@ var photoBox={
         })
     }
 }
+$(document).ready(function() {
+    if($(".instagram").length) {
+        photoBox.init();
+    }
+});

@@ -1493,8 +1493,3 @@
     
   });
 })(jQuery);
-$(document).ready(function() {
-    if($(".instagram").length) {
-        photoBox.init();
-    }
-});
