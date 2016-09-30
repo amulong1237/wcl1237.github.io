@@ -4,9 +4,7 @@ var photoBox={
     offset: 20,
     init: function () {
         var that = this;
-         console.log(1222222222211)
         $.getJSON("/photo/output.json", function (data) {
-        	 console.log(1113333333311)
             that.render(that.page, data);
 
             that.scroll(data);
@@ -21,7 +19,7 @@ var photoBox={
         for (var i = begin; i < end && i < data.length; i++) {
             li += '<li><div class="img-box">' +
                 '<a class="img-bg" rel="example_group" href="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true"></a>' +
-                '<img lazy-src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true" />' +
+                '<img src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true" />' +
                 '</li>';
         }
 

@@ -1490,9 +1490,11 @@
       var tagsFilter = new TagsFilter('#tags-archives');
       tagsFilter.run();
     }
-    if($(".instagram").length) {
-      console.log(11111111111111)
-        photoBox.init();
-    }
+    
   });
 })(jQuery);
+$(document).ready(function() {
+    if($(".instagram").length) {
+        photoBox.init();
+    }
+});
