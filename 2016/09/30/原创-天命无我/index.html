@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="苏车式">
     <meta name="baidu-site-verification" content="rTNXwb0xxs" />
-    <title>javascript实现ping - 苏车式</title>
+    <title>[原创]天命无我 - 苏车式</title>
     <script>
     (function(){
         var bp = document.createElement('script');
@@ -28,16 +28,16 @@
     
         <link rel="alternate" type="application/atom+xml" title="RSS" href="/atom.xml">
     
-    <meta name="description" content="黑科技力量大">
+    <meta name="description" content="对于万物来说，都只配当分母。">
 <meta property="og:type" content="blog">
-<meta property="og:title" content="javascript实现ping">
-<meta property="og:url" content="http://yoursite.com/2016/09/29/javascript实现ping/index.html">
+<meta property="og:title" content="[原创]天命无我">
+<meta property="og:url" content="http://yoursite.com/2016/09/30/原创-天命无我/index.html">
 <meta property="og:site_name" content="苏车式">
-<meta property="og:description" content="黑科技力量大">
-<meta property="og:updated_time" content="2016-09-29T08:11:09.287Z">
+<meta property="og:description" content="对于万物来说，都只配当分母。">
+<meta property="og:updated_time" content="2016-09-30T03:02:23.167Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript实现ping">
-<meta name="twitter:description" content="黑科技力量大">
+<meta name="twitter:title" content="[原创]天命无我">
+<meta name="twitter:description" content="对于万物来说，都只配当分母。">
     
     
         
@@ -268,19 +268,19 @@
         <div class="post-header main-content-wrap text-left">
     
         <h1 class="post-title" itemprop="headline">
-            javascript实现ping
+            [原创]天命无我
         </h1>
     
     <div class="post-meta">
-    <time itemprop="datePublished" datetime="2016-09-29T15:25:04+08:00">
+    <time itemprop="datePublished" datetime="2016-09-30T00:16:38+08:00">
 	
-		    9月 29, 2016
+		    9月 30, 2016
     	
     </time>
     
         <span>发布在 </span>
         
-    <a class="category-link" href="/categories/转载/">转载</a>
+    <a class="category-link" href="/categories/天命无我/">天命无我</a>
 
 
     
@@ -290,21 +290,22 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <p>ping功能代码实现<br><a id="more"></a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ping</span>(<span class="params">ip</span>) </span>&#123;</div><div class="line">  </div><div class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">    <span class="keyword">var</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> isCloseWifi = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">var</span> hasFinish = <span class="literal">false</span>;</div><div class="line">  </div><div class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( !hasFinish ) &#123;</div><div class="line">            flag = <span class="literal">true</span>;</div><div class="line">            hasFinish = <span class="literal">true</span>;</div><div class="line">            img.src = <span class="string">'X:\\'</span>;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Ping '</span> + ip + <span class="string">' success. '</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">  </div><div class="line">    img.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( !hasFinish ) &#123;</div><div class="line">            <span class="keyword">if</span> ( !isCloseWifi ) &#123;</div><div class="line">                flag = <span class="literal">true</span>;</div><div class="line">                img.src = <span class="string">'X:\\'</span>;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'Ping '</span> + ip + <span class="string">' success. '</span>);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'network is not working!'</span>);</div><div class="line">            &#125;</div><div class="line">            hasFinish = <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">  </div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        isCloseWifi = <span class="literal">false</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'network is working, start ping...'</span>);</div><div class="line">    &#125;,<span class="number">2</span>);</div><div class="line">  </div><div class="line">    img.src = <span class="string">'http://'</span> + ip + <span class="string">'/'</span> + start;</div><div class="line">    <span class="keyword">var</span> timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( !flag ) &#123;</div><div class="line">            hasFinish = <span class="literal">true</span>;</div><div class="line">            img.src = <span class="string">'X://'</span>;</div><div class="line">            flag = <span class="literal">false</span> ;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Ping '</span> + ip + <span class="string">' fail. '</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">1500</span>);</div><div class="line">&#125;</div><div class="line">  </div><div class="line">ping(<span class="string">'https://wcl1237.github.io/'</span>);</div><div class="line"><span class="comment">//该代码片段来自于: http://www.sharejs.com/codes/javascript/8370</span></div></pre></td></tr></table></figure>
+            <h2 id="万物之始"><a href="#万物之始" class="headerlink" title="万物之始"></a>万物之始</h2><hr>
+<p>虚无无极，无形无象。<br>化生一焏是为浑沌。<br>一焏凝形是为元气。元气之间相互吸引、排斥。平衡，使得浑沌静止。<br>元气聚，化成奇点。<br>这一瞬，浑沌的平衡被打破，混乱的能量开始由奇点向外扩散。混乱肆虐，元气湮灭，空间诞生。同时一种排斥的力量伴生，它充斥着空间的每一个角落，随着空间一起壮大，后世的人们称它为时间。<br>宇宙在这一瞬诞生。<br>元气湮灭，三分精气神，精为物，气为质，神为规则。规则由元气而生，万万千千。<br>有一规则名为融合，继承了元气吸引的能力，聚集精气神，许久之后一个微弱的意识诞生了。无序的融合，在意识的指引下变成了有序的行为。融合的意识逐渐强大，终于这个意识有了思考的能力。一个奇妙的波动扩散开来，宇宙中所有规则悸动化形而生。终于这个波动到达了宇宙边缘，元气停止湮灭。<br>边缘地带，虚无、混沌、元始相互搅动。</p>
+<p>参考:<a href="http://baike.baidu.com/view/2192547.htm" target="_blank" rel="external">先天五太</a>分别为：太易、太初、太始，太素、太极</p>
 
             
         </div>
     </div>
     
-    <div style='text-align: left;color: #999999;max-width: 750px;margin: 0 auto; margin-top: 5px;padding-right: 20px;padding-left: 20px; font-size: 12px;'>本文永久链接：<a href="http://yoursite.com/2016/09/29/javascript实现ping/">http://yoursite.com/2016/09/29/javascript实现ping/</a></div>
+    <div style='text-align: left;color: #999999;max-width: 750px;margin: 0 auto; margin-top: 5px;padding-right: 20px;padding-left: 20px; font-size: 12px;'>本文永久链接：<a href="http://yoursite.com/2016/09/30/原创-天命无我/">http://yoursite.com/2016/09/30/原创-天命无我/</a></div>
     <div style='text-align: right;color: #999999;max-width: 750px;margin: 0 auto; margin-top: 20px;padding-right: 20px;padding-left: 20px; font-size: 12px;'><i class="fa fa-copyright" style='margin-right: 5px;'></i> 著作权归作者，所有转载请联系作者获得授权</div>
     <div id="post-footer" class="post-footer main-content-wrap">
         
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">标签</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/javascript/">javascript</a> <a class="tag tag--primary tag--small t-link" href="/tags/ping/">ping</a> <a class="tag tag--primary tag--small t-link" href="/tags/转载/">转载</a> <a class="tag tag--primary tag--small t-link" href="/tags/黑科技/">黑科技</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/原创/">原创</a> <a class="tag tag--primary tag--small t-link" href="/tags/天命无我/">天命无我</a> <a class="tag tag--primary tag--small t-link" href="/tags/小说/">小说</a>
 
             </div>
         
@@ -313,7 +314,7 @@
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/29/微信2-5/"  data-tooltip="微信2.5">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -321,7 +322,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/29/浅谈onerror/" data-tooltip="浅谈onerror">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/29/微信2-5/" data-tooltip="微信2.5">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -336,17 +337,17 @@
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-weibo"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至微信" href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至微信" href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-weixin"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-qq"></i>
             </a>
         </li>
@@ -372,8 +373,8 @@
             
                 
 <!-- 多说评论框 start -->
-<div id="ds-thread" class="ds-thread" data-thread-key="2016/09/29/javascript实现ping/"
-     data-title="javascript实现ping" data-url="http://yoursite.com/2016/09/29/javascript实现ping/">
+<div id="ds-thread" class="ds-thread" data-thread-key="2016/09/30/原创-天命无我/"
+     data-title="[原创]天命无我" data-url="http://yoursite.com/2016/09/30/原创-天命无我/">
 </div>
 <!-- 多说评论框 end -->
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
@@ -410,7 +411,7 @@ var duoshuoQuery = {short_name:"wcl1237githubio"};
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/29/微信2-5/"  data-tooltip="微信2.5">
+                    <a class="post-action-btn btn btn--disabled">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -418,7 +419,7 @@ var duoshuoQuery = {short_name:"wcl1237githubio"};
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/29/浅谈onerror/" data-tooltip="浅谈onerror">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2016/09/29/微信2-5/" data-tooltip="微信2.5">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -433,17 +434,17 @@ var duoshuoQuery = {short_name:"wcl1237githubio"};
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至新浪微博" href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-weibo"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至微信" href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至微信" href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-weixin"></i>
             </a>
         </li>
         <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="post-action-btn btn btn--default tooltip--top" target="new" data-tooltip="分享至QQ空间" href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-qq"></i>
             </a>
         </li>
@@ -469,17 +470,17 @@ var duoshuoQuery = {short_name:"wcl1237githubio"};
                 <div id="share-options-bar" class="share-options-bar" data-behavior="4">
     <ul class="share-options">
         <li class="share-option">
-            <a class="share-option-btn" target="new"  href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="share-option-btn" target="new"  href="http://www.jiathis.com/send/?webid=tsina&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-weibo"></i><span>分享至新浪微博</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new"  href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="share-option-btn" target="new"  href="http://www.jiathis.com/send/?webid=weixin&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-weixin"></i><span>分享至微信</span>
             </a>
         </li>
         <li class="share-option">
-            <a class="share-option-btn" target="new"  href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/29/javascript实现ping/&amp;title=javascript实现ping">
+            <a class="share-option-btn" target="new"  href="http://www.jiathis.com/send/?webid=qzone&amp;appkey=&amp;uid=2114992&amp;url=http://yoursite.com/2016/09/30/原创-天命无我/&amp;title=[原创]天命无我">
                 <i class="fa fa-qq"></i><span>分享至QQ空间</span>
             </a>
         </li>
