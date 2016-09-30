@@ -1491,9 +1491,7 @@
       tagsFilter.run();
     }
     if($(".instagram").length) {
-    require(['/assets/js/photo.js', '/assets/fancybox/jquery.fancybox.js', '/assets/js/jquery.lazyload.js'], function(obj) {
-        obj.init();
-    });
+        photoBox.init();
     }
   });
 })(jQuery);
