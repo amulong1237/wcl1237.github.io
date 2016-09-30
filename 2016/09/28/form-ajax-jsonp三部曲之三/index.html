@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之三/index.html">
 <meta property="og:site_name" content="苏车式">
 <meta property="og:description" content="数据交互与dom操作并列前端两大基石">
-<meta property="og:updated_time" content="2016-09-30T11:50:04.032Z">
+<meta property="og:updated_time" content="2016-09-30T11:53:57.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="form-ajax-jsonp三部曲之三">
 <meta name="twitter:description" content="数据交互与dom操作并列前端两大基石">
@@ -302,7 +302,8 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <div class="main-content-wrap">
+            <h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Jsonp原理："><span class="toc-text">Jsonp原理：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端对JSONP支持"><span class="toc-text">服务器端对JSONP支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端实现跨域请求"><span class="toc-text">客户端实现跨域请求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#创建-lt-script-gt-标签"><span class="toc-text">创建<script>标签</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#客户端实现-callbackFunction-函数-全局"><span class="toc-text">客户端实现 callbackFunction 函数(全局)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#监听jsonp"><span class="toc-text">监听jsonp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考内容："><span class="toc-text">参考内容：</span></a></li></ol>
+<div class="main-content-wrap">
 <p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器沟通，而 HTML 的&lt;script&gt;元素是一个例外。利用 &lt;script&gt;元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。<br><a id="more"></a></p>
 <h2 id="Jsonp原理："><a href="#Jsonp原理：" class="headerlink" title="Jsonp原理："></a>Jsonp原理：</h2><p>在客户端定义一个callbackFunction, 然后把callbackFunction的名字传给服务器。</p>
 <p>服务器先生成 json 数据。然后以 javascript 语法的方式，生成一个function , function 名字就是传递上来的参数 jsonp的值.</p>
@@ -387,7 +388,7 @@
         
       <!--  <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -484,7 +485,7 @@ var duoshuoQuery = {short_name:"wcl1237githubio"};
         
       <!--  <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
