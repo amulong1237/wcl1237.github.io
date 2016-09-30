@@ -301,42 +301,7 @@
 </div>
     
     <div class="post-content markdown" itemprop="articleBody">
-    <style>
-		.toc-article{
-			background: #eee;
-		  	border :1px solid #bbb;
-		  	border-radius: 10px;
-		  	margin: 1.5em 0 0.3em 1.5em;
-		  	padding: 1.2em 1em 0 1em;
-		  	max-width: 28%;
-		}
-		.toc-title{
-		  	font-size :120%;
-		}
-		#toc{
-			line-height: 1em;
-		  	font-size: 0.9em;
-		  	float: right;
-		}  
-		.toc{
-		  	padding: 0;
-		    margin: 1em;
-		    line-height: 1.8em;
-		} 
-	    li{
-	      	list-style-type: none;
-	    }
-		.toc-child{
-		   	margin-left: 1em;
-		} 
-	</style>
         <div class="main-content-wrap">
-	        
-			  <div id="toc" class="toc-article">
-			    <strong class="toc-title">文章目录</strong>
-			    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#接口调试"><span class="toc-number">1.</span> <span class="toc-text">接口调试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ajax是异步的！"><span class="toc-number">2.</span> <span class="toc-text">ajax是异步的！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例化swiper时，需要Dom加载完成。"><span class="toc-number">3.</span> <span class="toc-text">实例化swiper时，需要Dom加载完成。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浏览器与AP的交互"><span class="toc-number">4.</span> <span class="toc-text">浏览器与AP的交互</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wifi-portal"><span class="toc-number">5.</span> <span class="toc-text">Wifi portal</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#适配性"><span class="toc-number">6.</span> <span class="toc-text">适配性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#兼容性"><span class="toc-number">7.</span> <span class="toc-text">兼容性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则："><span class="toc-number">8.1.</span> <span class="toc-text">正则：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TIPS"><span class="toc-number">8.2.</span> <span class="toc-text">TIPS:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#js-基于framework7"><span class="toc-number">8.2.1.</span> <span class="toc-text">js(基于framework7)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#css样式"><span class="toc-number">8.2.2.</span> <span class="toc-text">css样式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#countDown"><span class="toc-number">8.3.</span> <span class="toc-text">countDown</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">9.</span> <span class="toc-text">总结</span></a></li></ol>
-			  </div>
-			
             <p>工作以来第一个项目，虽然说不上手足无措，但是也同样有点力不从心。代码写了改，改了写，总感觉不好。纠结了4个小时，终于把相关的9个网页写完。然后…第二天，产品改了需求，页面被精简到4个。好吧，拿回原稿修改了一下啊，UI部分总算出活了。接下来与大家分享一下，开发中遇到的问题。<br><a id="more"></a></p>
 <h2 id="接口调试"><a href="#接口调试" class="headerlink" title="接口调试"></a>接口调试</h2><p>拿到接口文档就开始写后台交互。自己封装好一个ajax，交互逻辑写好，开始调试接口。<br>然后问题出现了，后端解析不了我传过去的数据。后来查出我传过去的不是严格格式的json。然后花了一个小时时间拼接了这个字符串：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&#123;\"mobile\":\"'</span>+tel+<span class="string">'\",\"pwd\":\"'</span>+code+<span class="string">'\",\"funCode\":\"8003\"&#125;'</span></div></pre></td></tr></table></figure>
