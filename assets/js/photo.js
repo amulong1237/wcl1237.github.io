@@ -1,4 +1,4 @@
-function photoBox(){
+var photoBox={
 
     page: 1,
     offset: 20,
