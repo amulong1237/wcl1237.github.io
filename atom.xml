@@ -154,7 +154,7 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%89/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之三/</id>
     <published>2016-09-28T15:26:00.000Z</published>
-    <updated>2016-09-30T11:59:13.359Z</updated>
+    <updated>2016-09-30T12:06:27.063Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器沟通，而 HTML 的&lt;script&gt;元素是一个例外。利用 &lt;script&gt;元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。<br><a id="more"></a></p>
@@ -166,7 +166,7 @@
 <p>Java:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">return</span> request.getParameter(<span class="string">"callbackFunction"</span>)+<span class="string">"("</span>+JsonString+<span class="string">")"</span>;</div></pre></td></tr></table></figure></p>
 <p>返回内容像：callbackFunction([“param1”,”param2”])</p>
 <h2 id="客户端实现跨域请求"><a href="#客户端实现跨域请求" class="headerlink" title="客户端实现跨域请求"></a>客户端实现跨域请求</h2><p>在客户端调用提供JSONP支持的URL Service，获取JSONP格式数据。</p>
-<h4 id="创建-lt-script-gt-标签"><a href="#创建-lt-script-gt-标签" class="headerlink" title="创建&lt;script&gt;标签"></a>创建&lt;script&gt;标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var head= document.getElementsByTagName(<span class="string">'head'</span>)[0]; </div><div class="line">var script= document.createElement(<span class="string">'script'</span>); </div><div class="line">script.type= <span class="string">'text/javascript'</span>; </div><div class="line">script.src= <span class="string">'http://example.com/servlet?jsonp=callbackFunction'</span>; </div><div class="line">head.appendChild(script);</div></pre></td></tr></table></figure>
+<h4 id="创建script标签"><a href="#创建script标签" class="headerlink" title="创建script标签"></a>创建script标签</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var head= document.getElementsByTagName(<span class="string">'head'</span>)[0]; </div><div class="line">var script= document.createElement(<span class="string">'script'</span>); </div><div class="line">script.type= <span class="string">'text/javascript'</span>; </div><div class="line">script.src= <span class="string">'http://example.com/servlet?jsonp=callbackFunction'</span>; </div><div class="line">head.appendChild(script);</div></pre></td></tr></table></figure>
 <p>结果：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	...</div><div class="line">	&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> src=<span class="string">"http://example.com/servlet?jsonp=callbackFunction"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure></p>
 <h4 id="客户端实现-callbackFunction-函数-全局"><a href="#客户端实现-callbackFunction-函数-全局" class="headerlink" title="客户端实现 callbackFunction 函数(全局)"></a>客户端实现 callbackFunction 函数(全局)</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> callbackFunction(result) &#123;  </div><div class="line">    <span class="keyword">for</span>(var i <span class="keyword">in</span> result) &#123;  </div><div class="line">        alert(i+<span class="string">":"</span>+result[i]); </div><div class="line">    &#125;  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="监听jsonp"><a href="#监听jsonp" class="headerlink" title="监听jsonp"></a>监听jsonp</h2><p>Jsonp本质上就是一个异步的get请求，但是他跟ajax理论上毫无关联。<br>创建的script标签加载过程中同样拥有onreadystatechange事件与onload事件，同样也拥有onerror事件。我们可以通过这些来观察jsonp回调。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">	var head= document.getElementsByTagName(<span class="string">'head'</span>)[0]; </div><div class="line">	var script= document.createElement(<span class="string">'script'</span>); </div><div class="line">	script.type= <span class="string">'text/javascript'</span>; </div><div class="line">	script.onload = script.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123; </div><div class="line">		<span class="keyword">if</span> (!this.readyState || this.readyState === <span class="string">"loaded"</span> || this.readyState === <span class="string">"complete"</span> ) &#123; </div><div class="line">			alert(<span class="string">'加载成功'</span>)</div><div class="line">			script.onload = script.onreadystatechange = null; </div><div class="line">		&#125; </div><div class="line">	&#125;; </div><div class="line">	script.onerror = <span class="function"><span class="title">function</span></span>()&#123;</div><div class="line">		alert(<span class="string">'加载失败'</span>)</div><div class="line">	&#125;</div><div class="line">	script.src= <span class="string">'jsonp.js'</span>; </div><div class="line">	head.appendChild(script); </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
@@ -185,9 +185,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
-    
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
+    
+      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
@@ -284,9 +284,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
-    
       <category term="form" scheme="http://yoursite.com/tags/form/"/>
+    
+      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     
