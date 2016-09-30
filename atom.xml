@@ -92,7 +92,7 @@
     <link href="http://yoursite.com/2016/09/29/javascript%E5%AE%9E%E7%8E%B0ping/"/>
     <id>http://yoursite.com/2016/09/29/javascript实现ping/</id>
     <published>2016-09-29T07:25:04.000Z</published>
-    <updated>2016-09-29T08:11:09.287Z</updated>
+    <updated>2016-09-30T12:28:15.459Z</updated>
     
     <content type="html"><![CDATA[<p>ping功能代码实现<br><a id="more"></a></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">ping</span>(<span class="params">ip</span>) </span>&#123;</div><div class="line">  </div><div class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</div><div class="line">    <span class="keyword">var</span> start = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</div><div class="line">    <span class="keyword">var</span> flag = <span class="literal">false</span>;</div><div class="line">    <span class="keyword">var</span> isCloseWifi = <span class="literal">true</span>;</div><div class="line">    <span class="keyword">var</span> hasFinish = <span class="literal">false</span>;</div><div class="line">  </div><div class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( !hasFinish ) &#123;</div><div class="line">            flag = <span class="literal">true</span>;</div><div class="line">            hasFinish = <span class="literal">true</span>;</div><div class="line">            img.src = <span class="string">'X:\\'</span>;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Ping '</span> + ip + <span class="string">' success. '</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">  </div><div class="line">    img.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( !hasFinish ) &#123;</div><div class="line">            <span class="keyword">if</span> ( !isCloseWifi ) &#123;</div><div class="line">                flag = <span class="literal">true</span>;</div><div class="line">                img.src = <span class="string">'X:\\'</span>;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'Ping '</span> + ip + <span class="string">' success. '</span>);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                <span class="built_in">console</span>.log(<span class="string">'network is not working!'</span>);</div><div class="line">            &#125;</div><div class="line">            hasFinish = <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;;</div><div class="line">  </div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        isCloseWifi = <span class="literal">false</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'network is working, start ping...'</span>);</div><div class="line">    &#125;,<span class="number">2</span>);</div><div class="line">  </div><div class="line">    img.src = <span class="string">'http://'</span> + ip + <span class="string">'/'</span> + start;</div><div class="line">    <span class="keyword">var</span> timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">if</span> ( !flag ) &#123;</div><div class="line">            hasFinish = <span class="literal">true</span>;</div><div class="line">            img.src = <span class="string">'X://'</span>;</div><div class="line">            flag = <span class="literal">false</span> ;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'Ping '</span> + ip + <span class="string">' fail. '</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;, <span class="number">1500</span>);</div><div class="line">&#125;</div><div class="line">  </div><div class="line">ping(<span class="string">'https://wcl1237.github.io/'</span>);</div><div class="line"><span class="comment">//该代码片段来自于: http://www.sharejs.com/codes/javascript/8370</span></div></pre></td></tr></table></figure>
@@ -122,9 +122,9 @@
     <link href="http://yoursite.com/2016/09/29/%E6%B5%85%E8%B0%88onerror/"/>
     <id>http://yoursite.com/2016/09/29/浅谈onerror/</id>
     <published>2016-09-29T02:26:51.000Z</published>
-    <updated>2016-09-30T12:25:32.287Z</updated>
+    <updated>2016-09-30T12:28:19.222Z</updated>
     
-    <content type="html"><![CDATA[<!-- top -->
+    <content type="html"><![CDATA[<!-- toc -->
 <p>onerror 事件会在文档或图像加载过程中发生错误时被触发，或者页面中出现脚本错误，也会产生 onerror 事件。<br>如果需要利用 onerror 事件，就必须创建一个处理错误的函数。你可以把这个函数叫作 onerror 事件处理器 (onerror event handler)。这个事件处理器使用三个参数来调用：msg（错误消息）、url（发生错误的页面的 url）、line（发生错误的代码行）。同样，你也可以不使用他们。<br><a id="more"></a></p>
 <h2 id="监听脚本错误"><a href="#监听脚本错误" class="headerlink" title="监听脚本错误"></a>监听脚本错误</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		onerror=handleErr</div><div class="line">		var txt=<span class="string">""</span></div><div class="line">		<span class="keyword">function</span> handleErr(msg,url,l)</div><div class="line">		&#123;</div><div class="line">			txt=<span class="string">"There was an error on this page.\n\n"</span></div><div class="line">			txt+=<span class="string">"Error: "</span> + msg + <span class="string">"\n"</span></div><div class="line">			txt+=<span class="string">"URL: "</span> + url + <span class="string">"\n"</span></div><div class="line">			txt+=<span class="string">"Line: "</span> + l + <span class="string">"\n\n"</span></div><div class="line">			txt+=<span class="string">"Click OK to continue.\n\n"</span></div><div class="line">			alert(txt)</div><div class="line">			<span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">function</span> <span class="function"><span class="title">message</span></span>()</div><div class="line">		&#123;</div><div class="line">			alertdddlert(<span class="string">"Welcome guest!"</span>)</div><div class="line">		&#125;</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"View message"</span> onclick=<span class="string">"message()"</span> /&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <h2 id="监听资源加载"><a href="#监听资源加载" class="headerlink" title="监听资源加载"></a>监听资源加载</h2><p>如果装载图像时发生了错误，则显示一个对话框：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"image.gif"</span> onerror=<span class="string">"alert('The image could not be loaded.')"</span> /&gt;</div></pre></td></tr></table></figure></p>
@@ -155,7 +155,7 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%89/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之三/</id>
     <published>2016-09-28T15:26:00.000Z</published>
-    <updated>2016-09-30T12:11:32.798Z</updated>
+    <updated>2016-09-30T12:28:08.911Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
 <p>JSONP(JSON with Padding)是JSON的一种“使用模式”，可用于解决主流浏览器的跨域数据访问的问题。由于同源策略，一般来说位于 server1.example.com 的网页无法与不是 server1.example.com的服务器沟通，而 HTML 的&lt;script&gt;元素是一个例外。利用 &lt;script&gt;元素的这个开放策略，网页可以得到从其他来源动态产生的 JSON 资料，而这种使用模式就是所谓的 JSONP。用 JSONP 抓到的资料并不是 JSON，而是任意的JavaScript，用 JavaScript 直译器执行而不是用 JSON 解析器解析。<br><a id="more"></a></p>
@@ -186,11 +186,11 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
-    
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
     
       <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
@@ -201,9 +201,9 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%BA%8C/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之二/</id>
     <published>2016-09-28T10:19:09.000Z</published>
-    <updated>2016-09-30T12:25:02.294Z</updated>
+    <updated>2016-09-30T12:28:06.487Z</updated>
     
-    <content type="html"><![CDATA[<!-- top -->
+    <content type="html"><![CDATA[<!-- toc -->
 <p>AJAX即“Asynchronous Javascript And XML”（异步JavaScript和XML），是指一种创建交互式网页应用的网页开发技术。<br>AJAX = 异步 JavaScript和XML（标准通用标记语言的子集）。<br>AJAX 是一种用于创建快速动态网页的技术。<br>通过在后台与服务器进行少量数据交换，AJAX 可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。<br><a id="more"></a></p>
 <h2 id="XMLHttpRequest-是-AJAX-的基础。"><a href="#XMLHttpRequest-是-AJAX-的基础。" class="headerlink" title="XMLHttpRequest 是 AJAX 的基础。"></a>XMLHttpRequest 是 AJAX 的基础。</h2><p>注：IE5 和 IE6 使用 ActiveXObject。</p>
 <h2 id="创建-XMLHttpRequest-对象"><a href="#创建-XMLHttpRequest-对象" class="headerlink" title="创建 XMLHttpRequest 对象"></a>创建 XMLHttpRequest 对象</h2><p>所有现代浏览器（IE7+、Firefox、Chrome、Safari 以及 Opera）均内建 XMLHttpRequest 对象。<br>创建 XMLHttpRequest 对象的语法：</p>
@@ -251,11 +251,11 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
+      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+    
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
     
   </entry>
   
@@ -264,9 +264,9 @@
     <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%80/"/>
     <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之一/</id>
     <published>2016-09-28T07:29:14.000Z</published>
-    <updated>2016-09-30T12:25:12.030Z</updated>
+    <updated>2016-09-30T12:28:10.391Z</updated>
     
-    <content type="html"><![CDATA[<!-- top -->
+    <content type="html"><![CDATA[<!-- toc -->
 <p>&lt;form&gt; 标签用于为用户输入创建 HTML 表单。<br>表单能够包含 input 元素，比如文本字段、复选框、单选框、提交按钮等等。<br>表单还可以包含 menus、textarea、fieldset、legend 和 label 元素。<br>表单用于向服务器传输数据。<br><a id="more"></a></p>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;form action=<span class="string">"url"</span> enctype=<span class="string">"multipart/form-data"</span> name=<span class="string">"form1"</span> target=<span class="string">"_blank"</span> method=<span class="string">"get"</span> &gt;</div><div class="line">  &lt;p&gt;First name: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"fname"</span> /&gt;&lt;/p&gt;</div><div class="line">  &lt;p&gt;Last name: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"lname"</span> /&gt;&lt;/p&gt;</div><div class="line">  &lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> value=<span class="string">"Submit"</span> /&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
 <h2 id="form元素属性"><a href="#form元素属性" class="headerlink" title="form元素属性"></a>form元素属性</h2><table class="table table-bordered table-striped table-condensed"><tr><th>属性</th><th>值</th><th>描述</th></tr><tr><td>accept-charset</td><td>charset_list</td><td>规定服务器可处理的表单数据字符集。</td></tr><tr><td>action</td><td>URL</td><td>规定当提交表单时向何处发送表单数据。</td></tr><tr><td rowspan="2">autocomplete</td><td>on</td><td rowspan="2">规定是否启用表单的自动完成功能。</td></tr><tr><td>off</td></tr><tr><td rowspan="2">method</td><td>get</td><td rowspan="2">规定用于发送 form-data 的 HTTP 方法。</td></tr><tr><td>post</td></tr><tr><td>name</td><td>form_name</td><td>规定表单的名称。</td></tr><tr><td rowspan="5">target</td><td>_blank</td><td rowspan="5">规定在何处打开 action URL。</td></tr><tr><td>_self</td></tr><tr><td>_parent</td></tr><tr><td>_top</td></tr><tr><td>framename</td></tr><tr><td rowspan="3">enctype</td><td>application/x-www-form-urlencoded</td><td rowspan="3"></td></tr><tr><td>multipart/form-data</td></tr><tr><td>text/plain</td></tr></table>
@@ -300,9 +300,9 @@
     <link href="http://yoursite.com/2016/09/28/Wifi-portal/"/>
     <id>http://yoursite.com/2016/09/28/Wifi-portal/</id>
     <published>2016-09-28T03:05:04.000Z</published>
-    <updated>2016-09-30T12:25:25.284Z</updated>
+    <updated>2016-09-30T12:28:17.355Z</updated>
     
-    <content type="html"><![CDATA[<!-- top -->
+    <content type="html"><![CDATA[<!-- toc -->
 <p>工作以来第一个项目，虽然说不上手足无措，但是也同样有点力不从心。代码写了改，改了写，总感觉不好。纠结了4个小时，终于把相关的9个网页写完。然后…第二天，产品改了需求，页面被精简到4个。好吧，拿回原稿修改了一下啊，UI部分总算出活了。接下来与大家分享一下，开发中遇到的问题。<br><a id="more"></a></p>
 <h2 id="接口调试"><a href="#接口调试" class="headerlink" title="接口调试"></a>接口调试</h2><p>拿到接口文档就开始写后台交互。自己封装好一个ajax，交互逻辑写好，开始调试接口。<br>然后问题出现了，后端解析不了我传过去的数据。后来查出我传过去的不是严格格式的json。然后花了一个小时时间拼接了这个字符串：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">'&#123;\"mobile\":\"'</span>+tel+<span class="string">'\",\"pwd\":\"'</span>+code+<span class="string">'\",\"funCode\":\"8003\"&#125;'</span></div></pre></td></tr></table></figure>
@@ -342,9 +342,9 @@
     <link href="http://yoursite.com/2016/09/27/hexo-tranquilpeak%E5%8D%9A%E5%AE%A2%E5%88%9D%E9%95%BF%E6%88%90(%E4%B8%80)/"/>
     <id>http://yoursite.com/2016/09/27/hexo-tranquilpeak博客初长成(一)/</id>
     <published>2016-09-27T15:16:15.000Z</published>
-    <updated>2016-09-30T12:25:16.494Z</updated>
+    <updated>2016-09-30T12:28:13.637Z</updated>
     
-    <content type="html"><![CDATA[<!-- top -->
+    <content type="html"><![CDATA[<!-- toc -->
 <p>欢迎来到<a href="https://wcl1237.github.io" target="_blank" rel="external">苏车式</a>! 经过两天的努力，我的第一个博客终于顺利上线。作为一个初出茅庐的新人,希望可以得到前辈的批评指正，也同样愿意帮助正在奋进的朋友一起提高。接下来便将这两天来的收获分享给大家。<br><a id="more"></a></p>
 <h2 id="一、框架的选择"><a href="#一、框架的选择" class="headerlink" title="一、框架的选择"></a>一、框架的选择</h2><p>博客的框架有很多，比如github自带的jekyii，以及基于jekyii的octopress，基于php的wordpress，还有nodejs类的大部分应用性框架。考虑到后期扩展跟移植，我最后选择了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
 <p>选择<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>的原因：第一、基于Node.js可以快速生成静态资源。第二、可以部署到github上。暂时免除域名，服务器等烦恼。第三、上手容易。从开发到配置到发布，5个命令轻松搞定。第四、撰写流畅。支持GitHub Flavored Markdown和所有Octopress的插件。第五、资源库还算强大。第六、扩展轻松。随着半年来的工作学习，渐渐明白从使用到改造到创造的过程是每个程序员必须经历的。</p>

@@ -34,7 +34,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/29/浅谈onerror/index.html">
 <meta property="og:site_name" content="苏车式">
 <meta property="og:description" content="onerror用于错误处理，同时也可监听资源加载">
-<meta property="og:updated_time" content="2016-09-30T12:25:32.287Z">
+<meta property="og:updated_time" content="2016-09-30T12:28:19.222Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈onerror">
 <meta name="twitter:description" content="onerror用于错误处理，同时也可监听资源加载">
@@ -302,7 +302,7 @@
     
     <div class="post-content markdown" itemprop="articleBody">
         <div class="main-content-wrap">
-            <!-- top -->
+            <div id="toclist"><h1 id="table-of-contents">目录</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#监听脚本错误"><span class="toc-text">监听脚本错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#监听资源加载"><span class="toc-text">监听资源加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用onerror加载图片"><span class="toc-text">使用onerror加载图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考内容："><span class="toc-text">参考内容：</span></a></li></ol></div>
 <p>onerror 事件会在文档或图像加载过程中发生错误时被触发，或者页面中出现脚本错误，也会产生 onerror 事件。<br>如果需要利用 onerror 事件，就必须创建一个处理错误的函数。你可以把这个函数叫作 onerror 事件处理器 (onerror event handler)。这个事件处理器使用三个参数来调用：msg（错误消息）、url（发生错误的页面的 url）、line（发生错误的代码行）。同样，你也可以不使用他们。<br><a id="more"></a></p>
 <h2 id="监听脚本错误"><a href="#监听脚本错误" class="headerlink" title="监听脚本错误"></a>监听脚本错误</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">	&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</div><div class="line">		onerror=handleErr</div><div class="line">		var txt=<span class="string">""</span></div><div class="line">		<span class="keyword">function</span> handleErr(msg,url,l)</div><div class="line">		&#123;</div><div class="line">			txt=<span class="string">"There was an error on this page.\n\n"</span></div><div class="line">			txt+=<span class="string">"Error: "</span> + msg + <span class="string">"\n"</span></div><div class="line">			txt+=<span class="string">"URL: "</span> + url + <span class="string">"\n"</span></div><div class="line">			txt+=<span class="string">"Line: "</span> + l + <span class="string">"\n\n"</span></div><div class="line">			txt+=<span class="string">"Click OK to continue.\n\n"</span></div><div class="line">			alert(txt)</div><div class="line">			<span class="built_in">return</span> <span class="literal">true</span></div><div class="line">		&#125;</div><div class="line">		<span class="keyword">function</span> <span class="function"><span class="title">message</span></span>()</div><div class="line">		&#123;</div><div class="line">			alertdddlert(<span class="string">"Welcome guest!"</span>)</div><div class="line">		&#125;</div><div class="line">	&lt;/script&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"button"</span> value=<span class="string">"View message"</span> onclick=<span class="string">"message()"</span> /&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
 <h2 id="监听资源加载"><a href="#监听资源加载" class="headerlink" title="监听资源加载"></a>监听资源加载</h2><p>如果装载图像时发生了错误，则显示一个对话框：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"image.gif"</span> onerror=<span class="string">"alert('The image could not be loaded.')"</span> /&gt;</div></pre></td></tr></table></figure></p>
@@ -380,7 +380,7 @@
         
       <!--  <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
@@ -477,7 +477,7 @@ var duoshuoQuery = {short_name:"wcl1237githubio"};
         
       <!--  <li class="post-action">
             
-                <a class="post-action-btn btn btn--default" href="#">
+                <a class="post-action-btn btn btn--default" href="#table-of-contents">
             
                 <i class="fa fa-list"></i>
             </a>
