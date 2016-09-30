@@ -4,7 +4,9 @@ var photoBox={
     offset: 20,
     init: function () {
         var that = this;
+         console.log(1222222222211)
         $.getJSON("/photo/output.json", function (data) {
+        	 console.log(1113333333311)
             that.render(that.page, data);
 
             that.scroll(data);

@@ -1491,6 +1491,7 @@
       tagsFilter.run();
     }
     if($(".instagram").length) {
+      console.log(11111111111111)
         photoBox.init();
     }
   });
