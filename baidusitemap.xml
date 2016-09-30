@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://yoursite.com/2016/09/27/hexo-tranquilpeak%E5%8D%9A%E5%AE%A2%E5%88%9D%E9%95%BF%E6%88%90(%E4%B8%80)/</loc>
-    <lastmod>2016-09-30T12:40:21.906Z</lastmod>
+    <lastmod>2016-09-30T12:42:28.919Z</lastmod>
     <data>
         <display>
         <title>hexo+tranquilpeak博客初长成(一)</title>
@@ -59,9 +59,9 @@
         <title>form-ajax-jsonp三部曲之一</title>
         <pubTime>2016-09-28T07:29:14.000Z</pubTime>
         
-        <tag>数据交互</tag>
-         
         <tag>form</tag>
+         
+        <tag>数据交互</tag>
          
         <tag>html</tag>
          
@@ -153,9 +153,9 @@
         <title>form-ajax-jsonp三部曲之三</title>
         <pubTime>2016-09-28T15:26:00.000Z</pubTime>
         
-        <tag>jsonp</tag>
-         
         <tag>数据交互</tag>
+         
+        <tag>jsonp</tag>
          
         <tag>javascript</tag>
          
