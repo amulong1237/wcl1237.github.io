@@ -24,7 +24,7 @@ var photoBox={
         }
 
         $(".img-box-ul").append(li);
-        $(".img-box-ul").lazyload();
+        jQuery(".img-box-ul").lazyload();
         $("a[rel=example_group]").fancybox();
     },
 
