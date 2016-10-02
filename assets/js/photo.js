@@ -47,8 +47,8 @@ window.onload=function() {
         photoBox.init();
         // Load theme
 		Galleria.loadTheme('https://wcl1237.github.io/assets/lib/photo/themes/lightbox/galleria.lightbox.js');
-
-		$('#galleria').galleria({
+		setTimeout(function(){
+			$('#galleria').galleria({
 		       data_source: '.img-box-ul',
 			   extend: function() {
 			        this.bind(Galleria.LOADFINISH, function(e) {
@@ -65,6 +65,8 @@ window.onload=function() {
 		           }
 		       }
 		   });
+		},200)
+		
     }
 
 
