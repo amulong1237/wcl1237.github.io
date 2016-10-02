@@ -61,7 +61,7 @@ window.onload=function() {
 		       keep_source: true,
 		       data_config: function(img) {
 		           return {
-		               description: $(img).next('.caption').html()||'';
+		               description: $(img).next('.caption').html()||''
 		           }
 		       }
 		   });
