@@ -46,7 +46,7 @@ window.onload=function() {
     if($(".instagram").length) {
         photoBox.init();
         // Load theme
-		Galleria.loadTheme('/assets/lib/photo/themes/lightboxgalleria.lightbox.js');
+		Galleria.loadTheme('assets/lib/photo/themes/lightbox/lightboxgalleria.lightbox.js');
 
 		$('#galleria').galleria({
 		       data_source: '.img-box-ul',
