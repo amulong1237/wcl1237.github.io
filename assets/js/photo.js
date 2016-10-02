@@ -17,10 +17,10 @@ var photoBox={
         if (begin >= data.length) return;
         var html, li = "";
         for (var i = begin; i < end && i < data.length; i++) {
-            li += '<li><div class="img-box">' +
+            li += '<li>' +
                 '<a class="img-bg" rel="example_group" href="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true"></a>' +
                 '<img src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true" />' +
-                '</li>';
+                '</li>'
         }
 
         $(".img-box-ul").append(li);
@@ -45,5 +45,27 @@ var photoBox={
 window.onload=function() {
     if($(".instagram").length) {
         photoBox.init();
+        // Load theme
+		Galleria.loadTheme('/assets/lib/photo/themes/lightboxgalleria.lightbox.js');
+
+		$('#galleria').galleria({
+		       data_source: '.img-box-ul',
+			   extend: function() {
+			        this.bind(Galleria.LOADFINISH, function(e) {
+			            $(e.imageTarget).click(this.proxy(function(e) {
+			                e.preventDefault();
+			                this.next();
+			            }))
+			        })
+			    },
+		       keep_source: true,
+		       data_config: function(img) {
+		           return {
+		               description: $(img).next('.caption').html()||'';
+		           }
+		       }
+		   });
     }
+
+
 }
