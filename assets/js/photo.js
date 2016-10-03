@@ -48,7 +48,7 @@ window.onload=function() {
         photoBox.init();
          Galleria.loadTheme('https://wcl1237.github.io/assets/lib/photo/themes/lightbox/galleria.lightbox.js');
 
-          document.getElenmentById('galleria').galleria({
+          document.getElementById('galleria').galleria({
                data_source: '.instagram',
                extend: function() {
                     this.bind(Galleria.LOADFINISH, function(e) {
