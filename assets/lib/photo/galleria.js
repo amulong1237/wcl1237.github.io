@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
  /* ����������97վ���� www.97zzw.com */
-(function() {
+(function($) {
 
 var initializing = false,
     fnTest = /xyz/.test(function(){xyz;}) ? /\b__super\b/ : /.*/,
@@ -51,7 +51,7 @@ var Base = Class.extend({
         if (typeof elem == 'number') {
             elem = new Array(elem);
         }
-        jQuery.each(elem, function() {
+        $.each(elem, function() {
             fn.call(scope, arguments[1], arguments[0]);
         });
         return elem;
@@ -66,17 +66,17 @@ var Base = Class.extend({
     },
     getElements : function( selector ) {
         var elems = {};
-        this.loop( jQuery(selector), this.proxy(function( elem ) {
+        this.loop( $(selector), this.proxy(function( elem ) {
             this.push(elem, elems);
         }));
         return elems;
     },
     setStyle : function( elem, css ) {
-        jQuery(elem).css(css);
+        $(elem).css(css);
         return this;
     },
     getStyle : function( elem, styleProp, parse ) {
-        var val = jQuery(elem).css(styleProp);
+        var val = $(elem).css(styleProp);
         return parse ? this.parseValue( val ) : val;
     },
     cssText : function( string ) {
@@ -175,13 +175,13 @@ var Base = Class.extend({
         }); 
     },
     reveal : function( elem ) {
-        return jQuery( elem ).show();
+        return $( elem ).show();
     },
     hide : function( elem ) {
-        return jQuery( elem ).hide();
+        return $( elem ).hide();
     },
     mix : function() {
-        return jQuery.extend.apply(null, arguments);
+        return $.extend.apply(null, arguments);
     },
     proxy : function( fn, scope ) {
         if ( typeof fn !== 'function' ) {
@@ -193,21 +193,21 @@ var Base = Class.extend({
         };
     },
     listen : function( elem, type, fn ) {
-        jQuery(elem).bind( type, fn );
+        $(elem).bind( type, fn );
     },
     forget : function( elem, type ) {
-        jQuery(elem).unbind(type);
+        $(elem).unbind(type);
     },
     dispatch : function( elem, type ) {
-        jQuery(elem).trigger(type);
+        $(elem).trigger(type);
     },
     clone : function( elem, keepEvents ) {
         keepEvents = keepEvents || false;
-        return jQuery(elem).clone(keepEvents)[0];
+        return $(elem).clone(keepEvents)[0];
     },
     removeAttr : function( elem, attributes ) {
         this.loop( attributes.split(' '), function(attr) {
-            jQuery(elem).removeAttr(attr);
+            $(elem).removeAttr(attr);
         });
     },
     push : function( elem, obj ) {
@@ -224,7 +224,7 @@ var Base = Class.extend({
         return this.meassure(elem, outer, 'Height');
     },
     meassure : function(el, outer, meassure) {
-        var elem = jQuery( el );
+        var elem = $( el );
         var ret = outer ? elem['outer'+meassure](true) : elem[meassure.toLowerCase()]();
         // fix quirks mode
         if (G.QUIRK) {
@@ -239,17 +239,17 @@ var Base = Class.extend({
     toggleClass : function( elem, className, arg ) {
         if (typeof arg !== 'undefined') {
             var fn = arg ? 'addClass' : 'removeClass';
-            jQuery(elem)[fn](className);
+            $(elem)[fn](className);
             return this;
         }
-        jQuery(elem).toggleClass(className);
+        $(elem).toggleClass(className);
         return this;
     },
     hideAll : function( el ) {
-        jQuery(el).find('*').hide();
+        $(el).find('*').hide();
     },
     animate : function( el, options ) {
-        var elem = jQuery(el);
+        var elem = $(el);
         if (!elem.length) {
             return;
         }
@@ -904,11 +904,11 @@ var G = window.Galleria = Base.extend({
         };
     },
     attachKeyboard : function(map) {
-        jQuery(document).bind('keydown', {map: map, scope: this}, this.keyNav);
+        $(document).bind('keydown', {map: map, scope: this}, this.keyNav);
         return this;
     },
     detachKeyboard : function() {
-        jQuery(document).unbind('keydown', this.keyNav);
+        $(document).unbind('keydown', this.keyNav);
         return this;
     },
     keyNav : function(e) {
@@ -1209,7 +1209,7 @@ var G = window.Galleria = Base.extend({
         return o ? this.mix(obj,o) : obj;
     },
     
-    jQuery : function( str ) {
+    $ : function( str ) {
         var ret = [];
         this.loop(str.split(','), this.proxy(function(elem) {
             elem = elem.replace(/^\s\s*/, "").replace(/\s\s*$/, "");
@@ -1217,7 +1217,7 @@ var G = window.Galleria = Base.extend({
                 ret.push(elem);
             }
         }));
-        var jQ = jQuery(this.get(ret.shift()));
+        var jQ = $(this.get(ret.shift()));
         this.loop(ret, this.proxy(function(elem) {
             jQ = jQ.add(this.get(elem));
         }));
@@ -1225,7 +1225,7 @@ var G = window.Galleria = Base.extend({
     },
     
     $ : function( str ) {
-        return this.jQuery( str );
+        return this.$( str );
     },
     
     toggleQuality : function(img, force) {
@@ -1246,14 +1246,14 @@ var G = window.Galleria = Base.extend({
         if (
             (o.data_type == 'auto' && 
                 typeof o.data_source == 'object' && 
-                !(o.data_source instanceof jQuery) && 
+                !(o.data_source instanceof $) && 
                 !o.data_source.tagName
             ) || o.data_type == 'json' || o.data_source.constructor == Array ) {
             this.data = o.data_source;
             this.trigger( G.DATA );
             
         } else { // assume selector
-            var images = jQuery(o.data_source).find(o.data_image_selector);
+            var images = $(o.data_source).find(o.data_image_selector);
             var getData = this.proxy(function( elem ) {
                 var i,j,anchor = elem.parentNode;
                 if (anchor && anchor.nodeName == 'A') {
@@ -1341,7 +1341,7 @@ G.themes.create = G.addTheme = function(obj) {
                 css = el.src.replace(/[^\/]*$/, "") + obj.css;
                 proto.loadCSS(css, function() {
                     G.theme = theme;
-                    jQuery(document).trigger( G.THEMELOAD );
+                    $(document).trigger( G.THEMELOAD );
                 });
             }
         });
@@ -1362,7 +1362,7 @@ G.loadTheme = function(src) {
     G.prototype.loadScript(src);
 };
 
-jQuery.easing.galleria = function (x, t, b, c, d) {
+$.easing.galleria = function (x, t, b, c, d) {
     if ((t/=d/2) < 1) { 
         return c/2*t*t*t*t + b;
     }
@@ -1376,33 +1376,33 @@ G.transitions = {
         }
     },
     fade: function(params, complete) {
-        jQuery(params.next).show().css('opacity',0).animate({
+        $(params.next).show().css('opacity',0).animate({
             opacity: 1
         }, params.speed, complete);
         if (params.prev) {
-            jQuery(params.prev).css('opacity',1).animate({
+            $(params.prev).css('opacity',1).animate({
                 opacity: 0
             }, params.speed);
         }
     },
     flash: function(params, complete) {
-        jQuery(params.next).css('opacity',0);
+        $(params.next).css('opacity',0);
         if (params.prev) {
-            jQuery(params.prev).animate({
+            $(params.prev).animate({
                 opacity: 0
             }, (params.speed/2), function() {
-                jQuery(params.next).animate({
+                $(params.next).animate({
                     opacity: 1
                 }, params.speed, complete);
             });
         } else {
-            jQuery(params.next).animate({
+            $(params.next).animate({
                 opacity: 1
             }, params.speed, complete);
         }
     },
     slide: function(params, complete) {
-        var image = jQuery(params.next).parent();
+        var image = $(params.next).parent();
         var images =  this.$('images');
         var width = this.stageWidth;
         image.css({
@@ -1423,7 +1423,7 @@ G.transitions = {
     },
     fadeslide: function(params, complete) {
         if (params.prev) {
-            jQuery(params.prev).css({
+            $(params.prev).css({
                 opacity: 1,
                 left: 0
             }).animate({
@@ -1435,7 +1435,7 @@ G.transitions = {
                 easing: 'swing'
             });
         }
-        jQuery(params.next).css({
+        $(params.next).css({
             left: 50 * ( params.rewind ? -1 : 1 ), 
             opacity: 0
         }).animate({
@@ -1450,12 +1450,12 @@ G.transitions = {
     }
 };
 
-jQuery.fn.galleria = function(options) {
+$.fn.galleria = function(options) {
     options = options || {};
     
     var selector = this.selector;
     if ( !options.keep_source ) {
-        jQuery(this).children().hide();
+        $(this).children().hide();
     }
     
     options = G.prototype.mix(options, {target: selector } );
@@ -1471,7 +1471,7 @@ jQuery.fn.galleria = function(options) {
     if (G.theme) {
         gallery.init();
     } else {
-        jQuery(document).bind(G.THEMELOAD, function() {
+        $(document).bind(G.THEMELOAD, function() {
             gallery.init();
         });
     }
@@ -1480,5 +1480,5 @@ jQuery.fn.galleria = function(options) {
     
 };
 
-})();
+})(jQuery);
  /* ����������97վ���� www.97zzw.com */
