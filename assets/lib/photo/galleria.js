@@ -1479,7 +1479,6 @@ jQuery.fn.galleria = function(options) {
     return gallery;
     
 };
-window.jQuery = window.$ = jQuery;
 
 })();
  /* ����������97վ���� www.97zzw.com */
