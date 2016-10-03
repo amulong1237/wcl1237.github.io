@@ -300,7 +300,27 @@
     	<div class="main-content-wrap">
 		<div class="instagram"><section class="archives album"><ul class="img-box-ul" style='list-style: none;'></ul><div id="galleria"></div></section></div>
 		<script src="/assets/js/photo.js"></script>
+        <script>
+            Galleria.loadTheme('https://wcl1237.github.io/assets/lib/photo/themes/lightbox/galleria.lightbox.js');
+            $('#galleria').galleria({
+               data_source: '.img-box-ul',
+               extend: function() {
+                    this.bind(Galleria.LOADFINISH, function(e) {
+                        $(e.imageTarget).click(this.proxy(function(e) {
+                            e.preventDefault();
+                            this.next();
+                        }))
+                    })
+                },
+               keep_source: true,
+               data_config: function(img) {
+                   return {
+                       description: $(img).next('.caption').html()||''
+                   }
+               }
+           });
 
+        </script>
             
             
         </div>
