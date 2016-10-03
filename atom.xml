@@ -186,11 +186,11 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
-    
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
     
       <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
     
@@ -253,9 +253,9 @@
     
       <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
       <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -287,9 +287,9 @@
       <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
-    
       <category term="form" scheme="http://yoursite.com/tags/form/"/>
+    
+      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
       <category term="html" scheme="http://yoursite.com/tags/html/"/>
     

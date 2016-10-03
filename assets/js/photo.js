@@ -45,28 +45,6 @@ var photoBox={
 window.onload=function() {
     if($(".instagram").length) {
         photoBox.init();
-        // Load theme
-		Galleria.loadTheme('https://wcl1237.github.io/assets/lib/photo/themes/lightbox/galleria.lightbox.js');
-		setTimeout(function(){
-			$('#galleria').galleria({
-		       data_source: '.img-box-ul',
-			   extend: function() {
-			        this.bind(Galleria.LOADFINISH, function(e) {
-			            $(e.imageTarget).click(this.proxy(function(e) {
-			                e.preventDefault();
-			                this.next();
-			            }))
-			        })
-			    },
-		       keep_source: true,
-		       data_config: function(img) {
-		           return {
-		               description: $(img).next('.caption').html()||''
-		           }
-		       }
-		   });
-		},10000)
-		
     }
 
 
