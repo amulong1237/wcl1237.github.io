@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  */
  /* ����������97վ���� www.97zzw.com */
-(function($) {
+(function(jQuery) {
 
 var initializing = false,
     fnTest = /xyz/.test(function(){xyz;}) ? /\b__super\b/ : /.*/,
