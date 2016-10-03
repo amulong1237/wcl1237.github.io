@@ -1487,7 +1487,7 @@ G.transitions = {
     }
 };
 
-jQuery.fn.galleria11 = function(options) {
+var galleria = function(options) {
     options = options || {};
     
     var selector = this.selector;
@@ -1521,8 +1521,8 @@ window.onload=function() {
     if($(".instagram").length) {
         photoBox.init();
          Galleria.loadTheme('https://wcl1237.github.io/assets/lib/photo/themes/lightbox/galleria.lightbox.js');
-
-          $('#galleria').galleria11({
+         console.log($('#galleria'))
+          $('#galleria').galleria({
                data_source: '.instagram',
                extend: function() {
                     this.bind(Galleria.LOADFINISH, function(e) {
