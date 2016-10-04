@@ -18,8 +18,8 @@ var photoBox={
         var html, li = "";
         for (var i = begin; i < end && i < data.length; i++) {
             li += '<li>' +
-                '<a class="img-bg" rel="example_group" href="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true">' +
-                '<img src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true" /></a>' +
+                '<a class="img-bg" rel="example_group" href="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '">' +
+                '<img src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '" /></a>' +
                 '</li>'
         }
 
@@ -46,24 +46,6 @@ var photoBox={
 window.onload=function() {
     if($(".instagram").length) {
         photoBox.init();
-         Galleria.loadTheme('https://wcl1237.github.io/assets/lib/photo/themes/lightbox/galleria.lightbox.js');
-            $('#galleria').galleria({
-               data_source: '.instagram',
-               extend: function() {
-                    this.bind(Galleria.LOADFINISH, function(e) {
-                        $(e.imageTarget).click(this.proxy(function(e) {
-                            e.preventDefault();
-                            this.next();
-                        }))
-                    })
-                },
-               keep_source: true,
-               data_config: function(img) {
-                   return {
-                       description: $(img).next('.caption').html()||''
-                   }
-               }
-           });
     }
 
 
