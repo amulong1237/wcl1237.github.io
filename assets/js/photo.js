@@ -18,8 +18,8 @@ var photoBox={
         var html, li = "";
         for (var i = begin; i < end && i < data.length; i++) {
             li += '<li>' +
-                '<a class="img-bg" rel="example_group" href="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '">' +
-                '<img src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '" /></a>' +
+                '<a class="img-bg" rel="example_group" href="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true">' +
+                '<img src="https://github.com/wcl1237/wcl1237.github.io/blob/master/photos/' + data[i] + '?raw=true" /></a>' +
                 '</li>'
         }
 
