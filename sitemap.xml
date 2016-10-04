@@ -2,20 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/personal/index.html</loc>
-    
-    <lastmod>2016-10-04T15:01:59.649Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/personal.html</loc>
-    
-    <lastmod>2016-10-04T15:01:59.649Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2016/09/27/hexo-tranquilpeak%E5%8D%9A%E5%AE%A2%E5%88%9D%E9%95%BF%E6%88%90(%E4%B8%80)/</loc>
     
     <lastmod>2016-10-04T12:16:37.950Z</lastmod>
