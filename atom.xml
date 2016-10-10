@@ -4,9 +4,9 @@
   <subtitle>请让我改完这BUG🤣</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://wcl1237.github.io/"/>
   <updated>2016-10-05T04:40:29.030Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://wcl1237.github.io/</id>
   
   <author>
     <name>王昌隆</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>[原创]天命无我-万物之始</title>
-    <link href="http://yoursite.com/2016/09/30/%E5%8E%9F%E5%88%9B-%E5%A4%A9%E5%91%BD%E6%97%A0%E6%88%91-%E4%B8%87%E7%89%A9%E4%B9%8B%E5%A7%8B/"/>
-    <id>http://yoursite.com/2016/09/30/原创-天命无我-万物之始/</id>
+    <link href="https://wcl1237.github.io/2016/09/30/%E5%8E%9F%E5%88%9B-%E5%A4%A9%E5%91%BD%E6%97%A0%E6%88%91-%E4%B8%87%E7%89%A9%E4%B9%8B%E5%A7%8B/"/>
+    <id>https://wcl1237.github.io/2016/09/30/原创-天命无我-万物之始/</id>
     <published>2016-09-29T16:16:38.000Z</published>
     <updated>2016-10-05T04:40:29.030Z</updated>
     
@@ -33,21 +33,21 @@
     
     </summary>
     
-      <category term="天命无我" scheme="http://yoursite.com/categories/%E5%A4%A9%E5%91%BD%E6%97%A0%E6%88%91/"/>
+      <category term="天命无我" scheme="https://wcl1237.github.io/categories/%E5%A4%A9%E5%91%BD%E6%97%A0%E6%88%91/"/>
     
     
-      <category term="原创" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%88%9B/"/>
+      <category term="原创" scheme="https://wcl1237.github.io/tags/%E5%8E%9F%E5%88%9B/"/>
     
-      <category term="小说" scheme="http://yoursite.com/tags/%E5%B0%8F%E8%AF%B4/"/>
+      <category term="小说" scheme="https://wcl1237.github.io/tags/%E5%B0%8F%E8%AF%B4/"/>
     
-      <category term="天命无我" scheme="http://yoursite.com/tags/%E5%A4%A9%E5%91%BD%E6%97%A0%E6%88%91/"/>
+      <category term="天命无我" scheme="https://wcl1237.github.io/tags/%E5%A4%A9%E5%91%BD%E6%97%A0%E6%88%91/"/>
     
   </entry>
   
   <entry>
     <title>javascript实现ping</title>
-    <link href="http://yoursite.com/2016/09/29/javascript%E5%AE%9E%E7%8E%B0ping/"/>
-    <id>http://yoursite.com/2016/09/29/javascript实现ping/</id>
+    <link href="https://wcl1237.github.io/2016/09/29/javascript%E5%AE%9E%E7%8E%B0ping/"/>
+    <id>https://wcl1237.github.io/2016/09/29/javascript实现ping/</id>
     <published>2016-09-29T07:25:04.000Z</published>
     <updated>2016-09-30T12:28:15.459Z</updated>
     
@@ -61,23 +61,23 @@
     
     </summary>
     
-      <category term="转载" scheme="http://yoursite.com/categories/%E8%BD%AC%E8%BD%BD/"/>
+      <category term="转载" scheme="https://wcl1237.github.io/categories/%E8%BD%AC%E8%BD%BD/"/>
     
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+      <category term="javascript" scheme="https://wcl1237.github.io/tags/javascript/"/>
     
-      <category term="ping" scheme="http://yoursite.com/tags/ping/"/>
+      <category term="ping" scheme="https://wcl1237.github.io/tags/ping/"/>
     
-      <category term="转载" scheme="http://yoursite.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+      <category term="转载" scheme="https://wcl1237.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
     
-      <category term="黑科技" scheme="http://yoursite.com/tags/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
+      <category term="黑科技" scheme="https://wcl1237.github.io/tags/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
     
   </entry>
   
   <entry>
     <title>浅谈onerror</title>
-    <link href="http://yoursite.com/2016/09/29/%E6%B5%85%E8%B0%88onerror/"/>
-    <id>http://yoursite.com/2016/09/29/浅谈onerror/</id>
+    <link href="https://wcl1237.github.io/2016/09/29/%E6%B5%85%E8%B0%88onerror/"/>
+    <id>https://wcl1237.github.io/2016/09/29/浅谈onerror/</id>
     <published>2016-09-29T02:26:51.000Z</published>
     <updated>2016-09-30T12:28:19.222Z</updated>
     
@@ -100,17 +100,17 @@
     
     </summary>
     
-      <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
+      <category term="心得" scheme="https://wcl1237.github.io/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="onerror" scheme="http://yoursite.com/tags/onerror/"/>
+      <category term="onerror" scheme="https://wcl1237.github.io/tags/onerror/"/>
     
   </entry>
   
   <entry>
     <title>form-ajax-jsonp三部曲之三</title>
-    <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%89/"/>
-    <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之三/</id>
+    <link href="https://wcl1237.github.io/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%89/"/>
+    <id>https://wcl1237.github.io/2016/09/28/form-ajax-jsonp三部曲之三/</id>
     <published>2016-09-28T15:26:00.000Z</published>
     <updated>2016-09-30T12:28:08.911Z</updated>
     
@@ -140,23 +140,23 @@
     
     </summary>
     
-      <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
+      <category term="心得" scheme="https://wcl1237.github.io/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
+      <category term="数据交互" scheme="https://wcl1237.github.io/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
-      <category term="jsonp" scheme="http://yoursite.com/tags/jsonp/"/>
+      <category term="jsonp" scheme="https://wcl1237.github.io/tags/jsonp/"/>
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+      <category term="javascript" scheme="https://wcl1237.github.io/tags/javascript/"/>
     
-      <category term="跨域" scheme="http://yoursite.com/tags/%E8%B7%A8%E5%9F%9F/"/>
+      <category term="跨域" scheme="https://wcl1237.github.io/tags/%E8%B7%A8%E5%9F%9F/"/>
     
   </entry>
   
   <entry>
     <title>form-ajax-jsonp三部曲之二</title>
-    <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%BA%8C/"/>
-    <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之二/</id>
+    <link href="https://wcl1237.github.io/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%BA%8C/"/>
+    <id>https://wcl1237.github.io/2016/09/28/form-ajax-jsonp三部曲之二/</id>
     <published>2016-09-28T10:19:09.000Z</published>
     <updated>2016-09-30T12:30:39.220Z</updated>
     
@@ -205,21 +205,21 @@
     
     </summary>
     
-      <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
+      <category term="心得" scheme="https://wcl1237.github.io/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
+      <category term="数据交互" scheme="https://wcl1237.github.io/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+      <category term="javascript" scheme="https://wcl1237.github.io/tags/javascript/"/>
     
-      <category term="ajax" scheme="http://yoursite.com/tags/ajax/"/>
+      <category term="ajax" scheme="https://wcl1237.github.io/tags/ajax/"/>
     
   </entry>
   
   <entry>
     <title>form-ajax-jsonp三部曲之一</title>
-    <link href="http://yoursite.com/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%80/"/>
-    <id>http://yoursite.com/2016/09/28/form-ajax-jsonp三部曲之一/</id>
+    <link href="https://wcl1237.github.io/2016/09/28/form-ajax-jsonp%E4%B8%89%E9%83%A8%E6%9B%B2%E4%B9%8B%E4%B8%80/"/>
+    <id>https://wcl1237.github.io/2016/09/28/form-ajax-jsonp三部曲之一/</id>
     <published>2016-09-28T07:29:14.000Z</published>
     <updated>2016-09-30T12:30:53.739Z</updated>
     
@@ -241,21 +241,21 @@
     
     </summary>
     
-      <category term="心得" scheme="http://yoursite.com/categories/%E5%BF%83%E5%BE%97/"/>
+      <category term="心得" scheme="https://wcl1237.github.io/categories/%E5%BF%83%E5%BE%97/"/>
     
     
-      <category term="form" scheme="http://yoursite.com/tags/form/"/>
+      <category term="form" scheme="https://wcl1237.github.io/tags/form/"/>
     
-      <category term="数据交互" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
+      <category term="数据交互" scheme="https://wcl1237.github.io/tags/%E6%95%B0%E6%8D%AE%E4%BA%A4%E4%BA%92/"/>
     
-      <category term="html" scheme="http://yoursite.com/tags/html/"/>
+      <category term="html" scheme="https://wcl1237.github.io/tags/html/"/>
     
   </entry>
   
   <entry>
     <title>Wifi portal</title>
-    <link href="http://yoursite.com/2016/09/28/Wifi-portal/"/>
-    <id>http://yoursite.com/2016/09/28/Wifi-portal/</id>
+    <link href="https://wcl1237.github.io/2016/09/28/Wifi-portal/"/>
+    <id>https://wcl1237.github.io/2016/09/28/Wifi-portal/</id>
     <published>2016-09-28T03:05:04.000Z</published>
     <updated>2016-09-30T12:31:42.440Z</updated>
     
@@ -283,26 +283,26 @@
     
     </summary>
     
-      <category term="工作" scheme="http://yoursite.com/categories/%E5%B7%A5%E4%BD%9C/"/>
+      <category term="工作" scheme="https://wcl1237.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
     
     
-      <category term="framework7" scheme="http://yoursite.com/tags/framework7/"/>
+      <category term="framework7" scheme="https://wcl1237.github.io/tags/framework7/"/>
     
-      <category term="工作" scheme="http://yoursite.com/tags/%E5%B7%A5%E4%BD%9C/"/>
+      <category term="工作" scheme="https://wcl1237.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
     
-      <category term="移动端" scheme="http://yoursite.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+      <category term="移动端" scheme="https://wcl1237.github.io/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
     
   </entry>
   
   <entry>
     <title>hexo+tranquilpeak博客初长成(一)</title>
-    <link href="http://yoursite.com/2016/09/27/hexo-tranquilpeak%E5%8D%9A%E5%AE%A2%E5%88%9D%E9%95%BF%E6%88%90(%E4%B8%80)/"/>
-    <id>http://yoursite.com/2016/09/27/hexo-tranquilpeak博客初长成(一)/</id>
+    <link href="https://wcl1237.github.io/2016/09/27/hexo-tranquilpeak%E5%8D%9A%E5%AE%A2%E5%88%9D%E9%95%BF%E6%88%90(%E4%B8%80)/"/>
+    <id>https://wcl1237.github.io/2016/09/27/hexo-tranquilpeak博客初长成(一)/</id>
     <published>2016-09-27T15:16:15.000Z</published>
     <updated>2016-10-04T12:16:37.950Z</updated>
     
     <content type="html"><![CDATA[<!-- toc -->
-<p><style>ol{list-style: none;}</style><br>欢迎来到<a href="https://wcl1237.github.io" target="_blank" rel="external">苏车式</a>! 经过两天的努力，我的第一个博客终于顺利上线。作为一个初出茅庐的新人,希望可以得到前辈的批评指正，也同样愿意帮助正在奋进的朋友一起提高。接下来便将这两天来的收获分享给大家。<br><a id="more"></a></p>
+<p><style>ol{list-style: none;}</style><br>欢迎来到<a href="https://wcl1237.github.io">苏车式</a>! 经过两天的努力，我的第一个博客终于顺利上线。作为一个初出茅庐的新人,希望可以得到前辈的批评指正，也同样愿意帮助正在奋进的朋友一起提高。接下来便将这两天来的收获分享给大家。<br><a id="more"></a></p>
 <h2 id="一、框架的选择"><a href="#一、框架的选择" class="headerlink" title="一、框架的选择"></a>一、框架的选择</h2><p>博客的框架有很多，比如github自带的jekyii，以及基于jekyii的octopress，基于php的wordpress，还有nodejs类的大部分应用性框架。考虑到后期扩展跟移植，我最后选择了<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>!</p>
 <p>选择<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>的原因：第一、基于Node.js可以快速生成静态资源。第二、可以部署到github上。暂时免除域名，服务器等烦恼。第三、上手容易。从开发到配置到发布，5个命令轻松搞定。第四、撰写流畅。支持GitHub Flavored Markdown和所有Octopress的插件。第五、资源库还算强大。第六、扩展轻松。随着半年来的工作学习，渐渐明白从使用到改造到创造的过程是每个程序员必须经历的。</p>
 <h2 id="二、准备工作"><a href="#二、准备工作" class="headerlink" title="二、准备工作"></a>二、准备工作</h2><h3 id="安装Node与npm"><a href="#安装Node与npm" class="headerlink" title="安装Node与npm"></a>安装Node与npm</h3><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><h3 id="申请GitHub"><a href="#申请GitHub" class="headerlink" title="申请GitHub"></a>申请GitHub</h3><h2 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h2><p>全局安装Hexo.</p>
@@ -334,14 +334,14 @@
     
     </summary>
     
-      <category term="博客" scheme="http://yoursite.com/categories/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://wcl1237.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="hexo" scheme="https://wcl1237.github.io/tags/hexo/"/>
     
-      <category term="tranquilpeak" scheme="http://yoursite.com/tags/tranquilpeak/"/>
+      <category term="tranquilpeak" scheme="https://wcl1237.github.io/tags/tranquilpeak/"/>
     
-      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+      <category term="博客" scheme="https://wcl1237.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
